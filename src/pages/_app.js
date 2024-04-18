@@ -24,4 +24,6 @@ const App = memo(({ Component, pageProps }) => {
     );
 });
 
+App.displayName ="App";
+
 export default App;

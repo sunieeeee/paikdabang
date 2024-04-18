@@ -34,4 +34,6 @@ hello.getInitialProps = async (context) => {
     };
 };
 
+hello.displayName ="hello";
+
 export default hello;

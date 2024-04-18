@@ -48,4 +48,6 @@ index.getInitialProps = async (context) => {
     };
 };
 
+index.displayName ="index";
+
 export default index;

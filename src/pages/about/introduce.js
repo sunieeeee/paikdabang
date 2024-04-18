@@ -9,4 +9,6 @@ const introduce = memo(() => {
     );
 });
 
+introduce.displayName= "introduce";
+
 export default introduce;

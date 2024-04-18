@@ -26,4 +26,6 @@ world.getInitialProps = async (context) => {
     };
 };
 
+world.displayName ="world";
+
 export default world;

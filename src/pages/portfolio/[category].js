@@ -53,4 +53,6 @@ const portfolioCategory = memo(() => {
   );
 });
 
+portfolioCategory.displayName= "portfolioCategory";
+
 export default portfolioCategory;
