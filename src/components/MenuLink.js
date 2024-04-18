@@ -17,13 +17,6 @@ const MenuLinkContainer = styled(Link)`
         color: #22b8cf;
     }
 
-    &:after {
-        content: '|';
-        display: inline-block;
-        padding: 0 7px;
-        color: #ccc;
-    }
-
     &:last-child {
         &:after {
             /* 글자색을 흰색으로 지정하여 화면에서 숨긴다. */

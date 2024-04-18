@@ -31,6 +31,7 @@ const Meta = (props) => {
             <link rel="icon" href={props.icon} type="image/png" />
             <link rel="shortcut icon" href={props.shortcutIcon} type="image/png" />
             <link rel="apple-touch-icon" href={props.appleTouchIcon} type="image/png" />
+            
         </Head>
     );
 };

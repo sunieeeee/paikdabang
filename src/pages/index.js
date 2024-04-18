@@ -17,10 +17,10 @@ const index = memo(({mode}) => {
 
     return (
         <div>
-            <h1><i className="fa-solid fa-house"></i> index</h1>
+            <h1><i class="fa-brands fa-facebook-f"></i> index</h1>
             <p>여기는 index.js입니다.</p>
             <p>mode: {mode}</p>
-            <p>currentUrl: {currentUrl}</p>
+
         </div>
     );
 });

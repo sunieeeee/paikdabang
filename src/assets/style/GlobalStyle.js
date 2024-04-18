@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     * {
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -22,6 +24,14 @@ const GlobalStyle = createGlobalStyle`
 
     *:not(.fa-refular):not(.fa-solid) {
         font-family: var(--font-sans);
+    }
+
+    a {
+        text-decoration: none;
+    }
+    .inner {
+        margin: 0 auto;
+        max-width: 1200px
     }
 `;
 
