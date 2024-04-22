@@ -12,10 +12,6 @@ const MenuLinkContainer = styled(Link)`
     padding-bottom: 2px;
     color: #222;
 
-    /* CSS의 가상클래스 hover */
-    &:hover {
-        color: #22b8cf;
-    }
 
     &:last-child {
         &:after {

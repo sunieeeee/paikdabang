@@ -1,5 +1,6 @@
-import React, {memo} from "react";
+import React, {memo, useCallback, useState, useEffect} from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import MenuLink from "@/components/MenuLink";
 
@@ -9,17 +10,19 @@ import facebook from "@/assets/img/header/facebook-ico.png"
 import insta from "@/assets/img/header/insta-ico.png"
 
 const HeaderContainer = styled.header`
-position: relative;
+    position: relative;
     color: #333;
+    background-color: lightcoral;
 
     .inner {
         display: flex;
         justify-content: space-between;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
     }
 
     .box {
-        border: 1px solid red
+        /* padding-bottom: 20px; */
+        /* border: 1px solid red */
     }
 
     .box:first-of-type {
@@ -28,6 +31,8 @@ position: relative;
     }
 
     .box:last-of-type {
+        width: 79%;
+
         .box_top {
             display: flex;
             align-items: center;
@@ -37,8 +42,8 @@ position: relative;
             li {
                 display: flex;
                 align-items: center;
-                a {
-                    
+
+                a {        
                     color: #555;
                     display: block;
 
@@ -51,12 +56,7 @@ position: relative;
                     
                 }
 
-                
-                &:not(:first-of-type) a {
-                    width: 30px;
-                }
-
-                &::after {
+                &:first-of-type::after {
                     content: '';
                     display: inline-block;
                     vertical-align: middle;
@@ -65,6 +65,12 @@ position: relative;
                     height: 10px;
                     background-color: #555;
                 }
+                
+                &:not(:first-of-type) a {
+                    width: 30px;
+                }
+
+                
             }
             ul {
                 display: flex;
@@ -75,49 +81,135 @@ position: relative;
             }
         }
 
-        nav > ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            
-            li {
-                position: relative;
-                &:hover {
-                    & > ul {
-                        display: block;
-                    }
-                }
+        
 
-                & > ul {
-                    position: absolute;
-                    left: 0;
-                    top: 100%;
-                    display: block;
-                    /* width: 100%; */
-                    background-color: lightblue;
-                    display: none;
-
-                    li {
-                        
-                    }
-                }
+        nav {
+            .nav_background {
+                position: absolute;
+                left: 0%;
+                top: 100%;
+                width: 100vw;
+                height: 0;
+                background: yellow;
+                transition: .2s all;
             }
-            a {
-                display: block;
-                /* width: 100%; */
-                border: 1px solid red;
+
+            .nav_background.bgOn {
+                height: 220px;
+            }
+
+            & > ul {
+                display: flex;
+                flex-wrap: wrap;
+
+                & > li {
+                    position: relative;
+                    padding-bottom: 20px;
+                    width: 14.285%;
+                    text-align: center;
+                    
+                    > a {
+                        font-size: 15px;
+                    }
+
+                    & > ul.sub_menu {
+                        z-index: 1;
+                        position: absolute;
+                        left: 45px;
+                        top: 100%;
+                        display: none;
+                        padding-top: 20px;
+                        min-width: 180%;
+                        /* background-color: lightblue; */
+                        overflow: hidden;
+
+                        li {
+                            padding: 10px 0;
+                            width: 100%;
+                            text-align: left;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 10px;
+                                top: -10%;
+                                width: 30px;
+                                height: 30px;
+                                background-color: #fff;
+                                transform: rotate(45deg);
+                            }
+
+                            &:hover {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    
+                    &:hover {
+                        > ul.sub_menu {
+                            display: block;
+                        }
+                    }
+                }
+                
+                a {
+                    display: block;
+                    width: 100%;
+                    /* border: 1px solid red; */
+                }
             }
         }
+        
     }
 `;
 
 const Header = memo(() => {
+    const [menu, setMenu] = useState([]);
+
+    useEffect(()=>{
+        (async()=>{
+            let json = null;
+
+            try {
+                const response = await axios.get('/data.json');
+                json = response.data;
+                
+            } catch (e) {
+                console.error(e);
+                
+                return;
+            } finally {
+                
+                setMenu(() => json);
+                console.log(menu)
+            }
+            
+            
+            
+        })();
+        
+    }, []);
+    // console.log(menu.header)
+    const navBg = React.useRef();
+    
+    const onBgOn = useCallback((e)=> {
+        navBg.current.classList.add('bgOn');
+    }, []); 
+
+    const onBgOut = useCallback((e)=> {
+        navBg.current.classList.remove('bgOn');
+    }, []); 
+
+
+
+
     return (
         <HeaderContainer>
             <div className="inner">
                 <div className="box">
                     <h1>
-                        <Image src={logo} alt="로고 이미지" />
+                        logo
+                        {/* <Image src={logo} alt="로고 이미지" /> */}
                     </h1>
                 </div>
                 <div className="box">
@@ -138,13 +230,31 @@ const Header = memo(() => {
                             </li>
                         </ul>
                     </div>
-
+                    
+                    
                     <nav>
+                        <div ref={navBg} className="nav_background"></div>
                         <ul>
-                            <li>
+                        {/* {
+                            menu.header.map((v, i) => {
+                                return (
+                                    <li key={i}>
+                                        <MenuLink href={v.url}>{v.title}</MenuLink>
+
+                                        <ul>
+                                            {v.submenu.map((v, i)=> (
+                                                <li key={i}>{v.title}</li>
+                                            ))}
+                                        </ul>
+                                    </li>
+                                )
+                            })
+                        } */}
+
+                            {/* <li onMouseEnter={onBgOn} onMouseLeave={onBgOut}>
                                 <MenuLink href="/">빽다방</MenuLink>
                                 
-                                <ul>
+                                <ul className="sub_menu">
                                     <li>CEO 인사말</li>
                                     <li>빽다방 소개</li>
                                     <li>멤버십 / 앱 소개</li>
@@ -154,7 +264,7 @@ const Header = memo(() => {
                             </li>  
                             <li>
                                 <MenuLink href="/world?num1=300&num2=400">메뉴</MenuLink>
-                                <ul>
+                                <ul className="sub_menu">
                                     <li>CEO 인사말</li>
                                     <li>빽다방 소개</li>
                                     <li>멤버십 / 앱 소개</li>
@@ -164,7 +274,7 @@ const Header = memo(() => {
                             </li>
                             <li>
                                 <MenuLink href="/about/introduce">소식</MenuLink>
-                                <ul>
+                                <ul className="sub_menu">
                                     <li>CEO 인사말</li>
                                     <li>빽다방 소개</li>
                                     <li>멤버십 / 앱 소개</li>
@@ -174,7 +284,7 @@ const Header = memo(() => {
                             </li>
                             <li>
                                 <MenuLink href="/about/introduce">커뮤니티</MenuLink>
-                                <ul>
+                                <ul className="sub_menu">
                                     <li>CEO 인사말</li>
                                     <li>빽다방 소개</li>
                                     <li>멤버십 / 앱 소개</li>
@@ -184,7 +294,7 @@ const Header = memo(() => {
                             </li>
                             <li>
                                 <MenuLink href="/about/introduce">매장안내</MenuLink>
-                                <ul>
+                                <ul className="sub_menu">
                                     <li>CEO 인사말</li>
                                     <li>빽다방 소개</li>
                                     <li>멤버십 / 앱 소개</li>
@@ -194,7 +304,7 @@ const Header = memo(() => {
                             </li>
                             <li>
                                 <MenuLink href="/about/introduce">창업안내</MenuLink>
-                                <ul>
+                                <ul className="sub_menu">
                                     <li>CEO 인사말</li>
                                     <li>빽다방 소개</li>
                                     <li>멤버십 / 앱 소개</li>
@@ -204,14 +314,7 @@ const Header = memo(() => {
                             </li>
                             <li>
                                 <MenuLink href="/about/introduce">고객의 소리</MenuLink>
-                                <ul>
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>
+                            </li> */}
                         </ul>
                         
                         

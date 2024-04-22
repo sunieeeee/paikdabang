@@ -11,4 +11,11 @@ const introduce = memo(() => {
 
 introduce.displayName= "introduce";
 
+introduce.getInitialProps = async (context) => {
+    return {
+        mode: context.req ? "backend" : "front",
+        ...context.query,
+    };
+};
+
 export default introduce;
