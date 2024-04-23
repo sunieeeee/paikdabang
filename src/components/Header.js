@@ -1,18 +1,18 @@
 import React, {memo, useCallback, useState, useEffect} from "react";
 import styled from "styled-components";
 import axios from "axios";
+import Image from 'next/image'
 
 import MenuLink from "@/components/MenuLink";
 
-import Image from 'next/image'
 import logo from "@/assets/img/header/logo.png"
 import facebook from "@/assets/img/header/facebook-ico.png"
 import insta from "@/assets/img/header/insta-ico.png"
+// import menuBg from "/assets/img/header/menu-bg.jpg"
 
 const HeaderContainer = styled.header`
     position: relative;
     color: #333;
-    background-color: lightcoral;
 
     .inner {
         display: flex;
@@ -28,6 +28,10 @@ const HeaderContainer = styled.header`
     .box:first-of-type {
         display: flex;
         align-items: flex-end;
+
+        h1 {
+            padding-bottom: 20px;
+        }
     }
 
     .box:last-of-type {
@@ -37,6 +41,7 @@ const HeaderContainer = styled.header`
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            margin-bottom: 20px;
             width: 100%;
 
             li {
@@ -55,21 +60,27 @@ const HeaderContainer = styled.header`
                     
                     
                 }
+                &:first-of-type {
+                    font-size: 12px;
 
-                &:first-of-type::after {
-                    content: '';
-                    display: inline-block;
-                    vertical-align: middle;
-                    margin: 14px;
-                    width: 1px;
-                    height: 10px;
-                    background-color: #555;
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: 14px;
+                        width: 1px;
+                        height: 10px;
+                        background-color: #555;
+                    }
                 }
                 
-                &:not(:first-of-type) a {
-                    width: 30px;
-                }
+                &:not(:first-of-type) {
+                    margin-right: 10px;
 
+                    a {
+                        width: 20px;
+                    }
+                }
                 
             }
             ul {
@@ -90,7 +101,8 @@ const HeaderContainer = styled.header`
                 top: 100%;
                 width: 100vw;
                 height: 0;
-                background: yellow;
+                background: url('/assets/img/header/menu-bg.jpg') repeat top left;
+                background-color: #f8f8f8;
                 transition: .2s all;
             }
 
@@ -132,16 +144,21 @@ const HeaderContainer = styled.header`
                                 content: "";
                                 position: absolute;
                                 left: 10px;
-                                top: -10%;
+                                top: -22px;
                                 width: 30px;
                                 height: 30px;
                                 background-color: #fff;
                                 transform: rotate(45deg);
                             }
 
-                            &:hover {
-                                font-weight: bold;
+                            a {
+                                color: #202020;
+
+                                &:hover {
+                                    font-weight: bold;
+                                }
                             }
+                            
                         }
                     }
                     
@@ -164,36 +181,12 @@ const HeaderContainer = styled.header`
 `;
 
 const Header = memo(() => {
-    const [menu, setMenu] = useState([]);
-
-    useEffect(()=>{
-        (async()=>{
-            let json = null;
-
-            try {
-                const response = await axios.get('/data.json');
-                json = response.data;
-                
-            } catch (e) {
-                console.error(e);
-                
-                return;
-            } finally {
-                
-                setMenu(() => json);
-                console.log(menu)
-            }
-            
-            
-            
-        })();
-        
-    }, []);
-    // console.log(menu.header)
+    const datas = require('/public/data.json')
     const navBg = React.useRef();
     
     const onBgOn = useCallback((e)=> {
         navBg.current.classList.add('bgOn');
+
     }, []); 
 
     const onBgOut = useCallback((e)=> {
@@ -235,86 +228,23 @@ const Header = memo(() => {
                     <nav>
                         <div ref={navBg} className="nav_background"></div>
                         <ul>
-                        {/* {
-                            menu.header.map((v, i) => {
+                        {
+                            datas.header.map((v, i) => {
                                 return (
-                                    <li key={i}>
+                                    <li key={i} onMouseEnter={v.submenu && onBgOn} onMouseLeave={onBgOut}>
                                         <MenuLink href={v.url}>{v.title}</MenuLink>
 
-                                        <ul>
-                                            {v.submenu.map((v, i)=> (
-                                                <li key={i}>{v.title}</li>
+                                        <ul className="sub_menu">
+                                            {v.submenu && v.submenu.map((v, i)=> (
+                                                <li key={i}>
+                                                    <a href="">{v.title}</a>
+                                                </li>
                                             ))}
                                         </ul>
                                     </li>
                                 )
                             })
-                        } */}
-
-                            {/* <li onMouseEnter={onBgOn} onMouseLeave={onBgOut}>
-                                <MenuLink href="/">빽다방</MenuLink>
-                                
-                                <ul className="sub_menu">
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>  
-                            <li>
-                                <MenuLink href="/world?num1=300&num2=400">메뉴</MenuLink>
-                                <ul className="sub_menu">
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <MenuLink href="/about/introduce">소식</MenuLink>
-                                <ul className="sub_menu">
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <MenuLink href="/about/introduce">커뮤니티</MenuLink>
-                                <ul className="sub_menu">
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <MenuLink href="/about/introduce">매장안내</MenuLink>
-                                <ul className="sub_menu">
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <MenuLink href="/about/introduce">창업안내</MenuLink>
-                                <ul className="sub_menu">
-                                    <li>CEO 인사말</li>
-                                    <li>빽다방 소개</li>
-                                    <li>멤버십 / 앱 소개</li>
-                                    <li>커피 이야기</li>
-                                    <li>교육 이야기</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <MenuLink href="/about/introduce">고객의 소리</MenuLink>
-                            </li> */}
+                        }
                         </ul>
                         
                         
