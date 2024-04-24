@@ -5,11 +5,11 @@
       "title": "빽다방",
       "url": "#",
       "submenu": [
-        {"title": "CEO 인사말", "url": "#"},
-        {"title": "빽다방 소개", "url": "#"},
-        {"title": "멤버십 / 앱 소개", "url": "#"},
-        {"title": "커피 이야기", "url": "#"},
-        {"title": "교육 이야기", "url": "#"}
+        {"title": "CEO 인사말", "url": "/about/greeting"},
+        {"title": "빽다방 소개", "url": "/about/paiks_intro"},
+        {"title": "멤버십 / 앱 소개", "url": "/about/membership"},
+        {"title": "커피 이야기", "url": "/about/coffee_story"},
+        {"title": "교육 이야기", "url": "/about/education"}
       ]
     },
     {
@@ -17,11 +17,11 @@
       "title": "메뉴",
       "url": "#",
       "submenu": [
-        {"title": "신메뉴", "url": "#"},
-        {"title": "커피", "url": "#"},
-        {"title": "음료", "url": "#"},
-        {"title": "아이스크림/디저트", "url": "#"},
-        {"title": "빽스치노", "url": "#"}
+        {"title": "신메뉴", "url": "/menu/menu_new"},
+        {"title": "커피", "url": "/menu/menu_coffee"},
+        {"title": "음료", "url": "/menu/menu_drink"},
+        {"title": "아이스크림/디저트", "url": "/menu/menu_dessert"},
+        {"title": "빽스치노", "url": "/menu/menu_ccino"}
       ]
     },
     {
@@ -101,5 +101,10 @@
       "title": "고객센터: 1544-2360"
     }
   ],
-  "copyright": "COPYRIGHTⓒ 2018 THEBORN KOREA INC. ALL RIGHTS RESERVED"
+  "copyright": [
+    {
+      "id": "1",
+      "title": "COPYRIGHTⓒ 2018 THEBORN KOREA INC. ALL RIGHTS RESERVED"
+    }
+  ]  
 }

@@ -1,8 +1,10 @@
-import React, {memo} from "react";
+import React, {memo, useState, useEffect} from "react";
+import axios from "axios";
 import styled from "styled-components";
 import Image from 'next/image';
 
 import flogo from "@/assets/img/footer/flogo.png";
+import { set } from "lodash";
 
 const FooterContainer = styled.footer`
     border-top: 3px solid #ffe600;
@@ -55,16 +57,29 @@ const FooterContainer = styled.footer`
 `;
 
 const Footer = memo(() => {
-    const datas = require('/public/data.json');
-    console.log(datas.companyinfo);
-    // console.log(datas.header);
+    // const datas = require('/public/data.json');
+    
+    const [data, setData] = useState({ header: [], companyinfo: [], copyright: [] });
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await axios.get('/data.json');
+                setData(response.data);
+             
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        })();
+    }, []);
+
     return (
         <FooterContainer>
             <div className="inner">
                 <h2><Image src={flogo} alt="더본 로고 이미지" /></h2>
                 <ul>
                     {
-                        datas.companyinfo.map((v, i)=> {
+                        data.companyinfo.map((v, i)=> {
                             return (
                                 <li key={v.id}>{v.title}</li>
                             )  
@@ -72,7 +87,15 @@ const Footer = memo(() => {
                     }
                 </ul>
 
-                <p className="copyright">{datas.copyright}</p>
+                <p className="copyright">
+                    {
+                        data.copyright.map((v, i)=> {
+                            return (
+                                <p className="copyright" key={v.id}>{v.title}</p>
+                            )  
+                        })
+                    }
+                </p>
             </div>
             
         </FooterContainer>
