@@ -9,9 +9,10 @@ const GlobalStyle = createGlobalStyle`
         --color-black: #000000;
         --color-white: #ffffff;
         --color-gray: #999999;
-        --color-blue: #283E8F;
+        --color-blue: #293f83;
         /* 구글 웹 폰트에서 설정한 글꼴 이름 */
         --font-sans: 'Noto Sans KR';
+        --font-montserrat: 'Montserrat';
     }
 
     * {
@@ -23,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     *:not(.fa-refular):not(.fa-solid) {
-        font-family: var(--font-sans);
+        font-family: var(--font-sans, --font-montserrat);
     }
 
     a {
