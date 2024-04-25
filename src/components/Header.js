@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState, useEffect } from "react";
 import axios from "axios";
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
-// import { HeaderContainer } from "@/assets/style/Header";
+
 import MenuLink from "@/components/MenuLink";
 
 import logo from "@/assets/img/header/logo.png";
