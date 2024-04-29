@@ -1,25 +1,13 @@
-import React, {memo, useState, useEffect} from "react";
+import React, { memo, useCallback, useState, useEffect } from "react";
 import axios from "axios";
+import Image from 'next/image';
 import styled, { css } from 'styled-components';
-import Image from "next/image";
-import ImageSlider from "react-simple-image-slider";
 
 import btnPlus from "@/assets/img/main/view_icon.png"
 import btnOn from "@/assets/img/main/btn1-on.png"
 
-import Mainmenu from '@/components/mainmenu';
+const BannerBox = styled.div`
 
-const MainContainer = styled.main`
-    margin: 0 auto;
-    width: 1920px;
-    border: 2px solid red;
-    overflow: hidden !important;
-
-    .banner_wrap {
-        display: flex;
-        flex-wrap: wrap;
-        
-        .banner_box {
             width: 100%;
             height: 320px;
             border: 1px solid red;
@@ -100,7 +88,7 @@ const MainContainer = styled.main`
                     transition: .3s all;
                 }
             }
-        }
+        
 
         // 첫 번째 .banner_box
         & .banner_box:nth-of-type(1) {
@@ -189,75 +177,27 @@ const MainContainer = styled.main`
                 }
             }
         }
-    }
-    
-    
 `
 
+const Mainmenu = memo(({ title, text, key }) => {
+  console.log( title)
+  return (
 
-const index = memo(() => {
-    const images = [
-    {url: "/assets/img/main/slide/slide1.jpg"},
-    {url: "/assets/img/main/slide/slide2.jpg"},
-    {url: "/assets/img/main/slide/slide3.jpg"},
-    {url: "/assets/img/main/slide/slide4.jpg"}
-    ]    
-
-    const [menuinfo, setMenuinfo] = useState([]);
-
-    useEffect(() => {
-        (async () => {
-            try {
-                const response = await axios.get('/data.json');
-                setMenuinfo(response.data.menuinfo);
-                console.log(menuinfo)
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        })();
-    }, []);
-
-    return (
-        <MainContainer>
-            <ImageSlider 
-                width={1920}
-                height={600}
-                images={images}
-                showBullets={true}
-                // showNavs={true}
-                autoPlay={true}
-                autoPlayDelay={2.0}
-                loop={true}
-                style={{margin: '0 auto'}}
-            />
-
-            <div>
-                <div className="banner_wrap">
-                    {menuinfo && menuinfo.map((v, i) => (
-                        <Mainmenu title={v.title} text={v.text} key={i} />
-                        
-                        // <div className="banner_box" key={i}>
-                        //     {/* <a href="">{v.url}</a> */}
-                            
-                        //     <div className="banner_info">
-                        //         <dl>
-                        //             <dt>{v.title}</dt>
-                        //             <dd>{v.text}</dd>
-                        //         </dl>
-                        //         <div className="btn">
-                        //             <Image className="btnOff" src={btnPlus} alt="" />
-                        //             <Image className="btnOn" src={btnOn} alt="" />
-                        //         </div>
-                        //     </div>
-                        // </div>
-                    ))}
-
-                </div>
-            </div>
-        </MainContainer>
-    );
+      <BannerBox key={key}>
+          <div className="banner_info">
+              <dl>
+                  <dt>{title}</dt>
+                  <dd>{text}</dd>
+              </dl>
+              <div className="btn">
+                  <Image className="btnOff" src={btnPlus} alt="" />
+                  <Image className="btnOn" src={btnOn} alt="" />
+              </div>
+          </div>
+      </BannerBox>
+  );
 });
 
-index.displayName ="index";
+Mainmenu.displayName = "Mainmenu";
 
-export default index;
+export default Mainmenu;

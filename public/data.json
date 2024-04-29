@@ -106,5 +106,55 @@
       "id": "1",
       "title": "COPYRIGHTⓒ 2018 THEBORN KOREA INC. ALL RIGHTS RESERVED"
     }
-  ]  
+  ],
+  "menuinfo": [
+    {
+      "title": "PAIK’S COFFEE",
+      "text": "균형잡힌 바디감으로 긴 여운을 남기는 빽다방 커피를 만나보세요.",
+      "img": "/img/main/main_sec1.jpg",
+      "url": "/about/coffee_story/"
+    },
+    {
+      "title": "PAIK’S BRAND",
+      "text": "합리적인 가격으로 만나는 맛있고 든든한 빽다방",
+      "img": "/img/main/main_sec2.jpg",
+      "url": "/about/paiks_intro/"
+    },
+    {
+      "title": "FRESH COFFEE",
+      "text": "신선한 뉴크롭 원두를 사용하여 추출한 커피메뉴!",
+      "img": "/img/main/main_sec3.jpg",
+      "url": "menu/menu_coffee/"
+    },
+    {
+      "title": "VARIOUS BEVERAGE",
+      "text": "에이드, 티, 주스 등 취향대로 골라 먹는 즐거움!",
+      "img": "/img/main/main_sec4.jpg",
+      "url": "/menu/menu_drink/"
+    },
+    {
+      "title": "SWEET PAIK'S CCINO",
+      "text": "달콤 시원한 빽다방 시그니처 메뉴!",
+      "img": "/img/main/main_sec5.jpg",
+      "url": "/about/menu/menu_ccino/"
+    },
+    {
+      "title": "STORE",
+      "text": "원하시는 지역의 매장을 검색해보세요!",
+      "img": "",
+      "url": "#"
+    },
+    {
+      "title": "FRANCHISE",
+      "text": "빽다방 창업안내를 도와드리겠습니다.",
+      "img": "",
+      "url": "/franchise/franchise/"
+    },
+    {
+      "title": "TASTY ICE CREAM / DESSERT",
+      "text": "달콤한 아이스크림부터 든든한 브레드까지!",
+      "img": "",
+      "url": "/franchise/franchise/"
+    }
+  ]
 }
