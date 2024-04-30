@@ -139,11 +139,13 @@
       "url": "/about/menu/menu_ccino/"
     },
     {
-      "title": "STORE",
-      "text": "원하시는 지역의 매장을 검색해보세요!",
+      "title": "TASTY ICE CREAM / DESSERT",
+      "text": "달콤한 아이스크림부터 든든한 브레드까지!",
       "img": "",
-      "url": "#"
-    },
+      "url": "/franchise/franchise/"
+    }
+  ],
+  "storesearch": [
     {
       "title": "FRANCHISE",
       "text": "빽다방 창업안내를 도와드리겠습니다.",
@@ -151,10 +153,10 @@
       "url": "/franchise/franchise/"
     },
     {
-      "title": "TASTY ICE CREAM / DESSERT",
-      "text": "달콤한 아이스크림부터 든든한 브레드까지!",
+      "title": "STORE",
+      "text": "원하시는 지역의 매장을 검색해보세요!",
       "img": "",
-      "url": "/franchise/franchise/"
+      "url": "#"
     }
   ]
 }
