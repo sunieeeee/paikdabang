@@ -4,15 +4,18 @@ import styled, { css } from 'styled-components';
 import Image from "next/image";
 import ImageSlider from "react-simple-image-slider";
 
+import Sns from "@/components/Sns";
+
 import btnPlus from "@/assets/img/main/view_icon.png"
+import btnHouse from "@/assets/img/main/store-ico.png"
 import btnOn from "@/assets/img/main/btn1-on.png"
+
 
 // import Mainmenu from '@/components/mainmenu';
 
 const MainContainer = styled.main`
     margin: 0 auto;
     width: 1920px;
-    border: 2px solid red;
     overflow: hidden !important;
 
     .banner_wrap {
@@ -158,6 +161,41 @@ const MainContainer = styled.main`
                     }
                 }
             }
+
+            .btn_house {
+                position: relative;
+                width: 50px; 
+                height: 50px;
+                background-color: #fff;
+                border-radius: 100%;
+                box-shadow: 0 0px 10px 5px #00000011;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                .btnOn {
+                    display: none;
+                }
+
+                .btnOff {
+                    display: block;
+                    width: 23px;
+                    object-fit: contain;
+                }
+
+
+                &:hover {
+                    .btnOn {
+                        display: block;
+                    }
+
+                    .btnOff {
+                        display: none;
+                    }
+                }
+            }
         }
 
         // 첫 번째 .banner_box
@@ -290,20 +328,55 @@ const MainContainer = styled.main`
         }
     }
     
-    
+    .sns_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 70px;
+
+        dl {
+            text-align: center;
+
+            dt {
+                margin-bottom: 15px;
+                font-size: 24px;
+                font-family: "Nanum Myeongjo", serif;
+                font-weight: var(--font-myeongjo);
+                font-weight: 800;
+                letter-spacing: 3px;
+            }
+
+            dd {
+                display: inline-block;
+                padding: 0 6px;
+                color: #999;
+            }
+
+            &::after {
+                content: '';
+                margin: 30px auto 0 auto;
+                display: block;
+                width: 50px;
+                height: 1px;
+                background-color: #071f60;
+                
+            }
+        }
+    }
 `
 
 
 const index = memo(() => {
     const images = [
-    {url: "/assets/img/main/slide/slide1.jpg"},
-    {url: "/assets/img/main/slide/slide2.jpg"},
-    {url: "/assets/img/main/slide/slide3.jpg"},
-    {url: "/assets/img/main/slide/slide4.jpg"}
+        {url: "/assets/img/main/slide/slide1.jpg"},
+        {url: "/assets/img/main/slide/slide2.jpg"},
+        {url: "/assets/img/main/slide/slide3.jpg"},
+        {url: "/assets/img/main/slide/slide4.jpg"}
     ]    
 
     const [menuinfo, setMenuinfo] = useState([]);
     const [storesearch, setStoresearch] = useState([]);
+    const [hashtag, setHashtag] = useState([]);
 
     useEffect(() => {
         (async () => {
@@ -311,7 +384,8 @@ const index = memo(() => {
                 const response = await axios.get('/data.json');
                 setMenuinfo(response.data.menuinfo);
                 setStoresearch(response.data.storesearch);
-                console.log(menuinfo)
+                setHashtag(response.data.hashtag);
+            
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -369,9 +443,9 @@ const index = memo(() => {
                                     <dt>{v.title}</dt>
                                     <dd>{v.text}</dd>
                                 </dl>
-                                <div className="btn">
-                                <Image className="btnOff" src={btnPlus} alt="" />
-                                <Image className="btnOn" src={btnOn} alt="" />
+                                <div className="btn_house">
+                                    <Image className="btnOff" src={btnHouse} alt="" />
+                                    <Image className="btnOn" src={btnOn} alt="" />
                                 </div>
                             </>
                         )}
@@ -381,6 +455,22 @@ const index = memo(() => {
 
                 </div>
             </div>
+            
+            <div className="sns_wrap">
+                <dl>
+                    {hashtag && hashtag.map((v, i) => (
+                        <>
+                            <dt key={i}>{v.title}</dt>
+                            {v.txts && v.txts.map((v, i) => (
+                                <dd key={i}>{v.txt}</dd>
+
+                            ))}
+                        </>
+                    ))}
+                </dl>
+                <Sns />
+            </div>
+                
         </MainContainer>
     );
 });

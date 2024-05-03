@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
         /* 구글 웹 폰트에서 설정한 글꼴 이름 */
         --font-sans: 'Noto Sans KR';
         --font-montserrat: 'Montserrat';
+        --font-myeongjo: 'Nanum Myeongjo'
     }
 
     * {
@@ -24,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     *:not(.fa-refular):not(.fa-solid) {
-        font-family: var(--font-sans, --font-montserrat);
+        font-family: var(--font-sans, --font-montserrat, --font-myeongjo);
     }
 
     a {
