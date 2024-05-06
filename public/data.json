@@ -1,0 +1,110 @@
+{
+  "header": [
+    {
+      "id": "1",
+      "title": "빽다방",
+      "url": "#",
+      "submenu": [
+        {"title": "CEO 인사말", "url": "/about/greeting"},
+        {"title": "빽다방 소개", "url": "/about/paiks_intro"},
+        {"title": "멤버십 / 앱 소개", "url": "/about/membership"},
+        {"title": "커피 이야기", "url": "/about/coffee_story"},
+        {"title": "교육 이야기", "url": "/about/education"}
+      ]
+    },
+    {
+      "id": "2",
+      "title": "메뉴",
+      "url": "#",
+      "submenu": [
+        {"title": "신메뉴", "url": "/menu/menu_new"},
+        {"title": "커피", "url": "/menu/menu_coffee"},
+        {"title": "음료", "url": "/menu/menu_drink"},
+        {"title": "아이스크림/디저트", "url": "/menu/menu_dessert"},
+        {"title": "빽스치노", "url": "/menu/menu_ccino"}
+      ]
+    },
+    {
+      "id": "3",
+      "title": "소식",
+      "url": "#",
+      "submenu": [
+        {"title": "소식", "url": "#"},
+        {"title": "이벤트", "url": "#"},
+        {"title": "친절 우수매장", "url": "#"}
+      ]
+    },
+    {
+      "id": "4",
+      "title": "커뮤니티",
+      "url": "#",
+      "submenu": [
+        {"title": "커피 클래스", "url": "#"}
+      ]
+    },
+    {
+      "id": "5",
+      "title": "매장안내",
+      "url": "#",
+      "submenu": [
+        {"title": "매장찾기", "url": "#"}
+      ]
+    },
+    {
+      "id": "6",
+      "title": "창업안내",
+      "url": "#",
+      "submenu": [
+        {"title": "왜 빽다방인가요?", "url": "#"},
+        {"title": "창업상담 신청", "url": "#"},
+        {"title": "창업절차 및 조건", "url": "#"},
+        {"title": "인테리어", "url": "#"}
+      ]
+    },
+    {
+      "id": "7",
+      "title": "고객의 소리",
+      "url": "#"
+    }
+  ],
+  "companyinfo": [
+    {
+      "id": "1",
+      "title": "(주)더본코리아"
+    },
+    {
+      "id": "2",
+      "title": "사업자등록번호 211-86-00870"
+    },
+    {
+      "id": "3",
+      "title": "대표이사 백종원"
+    },
+    {
+      "id": "4",
+      "title": "주소: 서울시 강남구 봉은사로 1길 39 유성빌딩 5~6층"
+    },
+    {
+      "id": "5",
+      "title": "팩스: 02-511-3864"
+    },
+    {
+      "id": "6",
+      "title": "본사 대표전화: 02-549-3864"
+    },
+    {
+      "id": "7",
+      "title": "가맹상담전화: 02-3447-0410"
+    },
+    {
+      "id": "8",
+      "title": "고객센터: 1544-2360"
+    }
+  ],
+  "copyright": [
+    {
+      "id": "1",
+      "title": "COPYRIGHTⓒ 2018 THEBORN KOREA INC. ALL RIGHTS RESERVED"
+    }
+  ]  
+}
