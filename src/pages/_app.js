@@ -8,6 +8,7 @@ import Meta from "@/components/Meta";
 import GlobalStyle from "@/assets/style/GlobalStyle";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TopBtn from "@/components/TopBtn";
 
 const App = memo(({ Component, pageProps }) => {
     return (
@@ -20,6 +21,7 @@ const App = memo(({ Component, pageProps }) => {
             <Component {...pageProps} />
 
             <Footer />
+            <TopBtn />
         </>
     );
 });
