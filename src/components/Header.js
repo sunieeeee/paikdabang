@@ -4,12 +4,20 @@ import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
+//상태값을 로드하기 위한 hook과 action함수를 dispatch할 hook참조
+import {useSelector, useDispatch} from 'react-redux';
+//Slice에 정의된 함수 참조
+// - 동기처리인 경우에는 리듀서 내의 액션함수 참조
+// - 비동기처리인 경우에는 Slice내의 미들웨어 함수 참조
+import {getList} from '@/slices/HeaderSlice';
+
 import MenuLink from "@/components/MenuLink";
 import mq from "@/assets/style/MediaQuery.js"
 
 import logo from "@/assets/img/header/logo.png";
 import facebook from "@/assets/img/header/facebook-ico.png";
 import insta from "@/assets/img/header/insta-ico.png";
+
 
 const HeaderContainer = styled.header`
 z-index: 1;
@@ -34,11 +42,13 @@ color: #333;
 .box:first-of-type {
     display: flex;
     align-items: flex-end;
-
+    
     h1 {
         padding-bottom: 20px;
-
+        
         ${mq.maxWidth('xl')`
+            transition: .3s padding-bottom;
+            padding-bottom: 0;
             width: 50%;
 
             & img {
@@ -234,10 +244,11 @@ color: #333;
 
                         a {
                             color: #202020;
-
-                            &:hover {
-                                font-weight: bold;
-                            }
+                            ${mq.minWidth('xl')`
+                                &:hover {
+                                    font-weight: bold;
+                                }
+                            `}
                         }
                         
                     }
@@ -295,13 +306,14 @@ color: #333;
                         position: static;
                         display: block;
                         height: 0;
+                       
                         overflow: hidden;
                         padding: 0 2%;
                         background-color: #fff;
                         transition: .3s all;
                         
                         li {
-                            padding: 1.5% 0;
+                            padding: 20px;
                             border-bottom: 1px solid #e5e5e5;
                             
                             &:last-of-type {
@@ -311,7 +323,8 @@ color: #333;
                     }
 
                     > ul.sub_menu.sub_menu_active {
-                        height: 100%;
+                        height: auto;
+                     
                         overflow: visible;
                     }
                 }
@@ -328,10 +341,10 @@ const Header = memo(() => {
     const navBg = useRef();
     const menuIcon = useRef();
     const navList = useRef();
-    const subMenu = useRef();
+    const subMenu = useRef([]);
 
-    
     const [viewPort, setUseViewPort] = useState();
+
     useEffect(() => {
         const handleResize = () => {
             setUseViewPort(window.innerWidth);
@@ -343,45 +356,40 @@ const Header = memo(() => {
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-
-        
-      }, [viewPort]);
+    }, [viewPort]);
 
     const onBgOn = useCallback(() => {
-        viewPort > 1200 && navBg.current.classList.add('bgOn');
-    }, [viewPort]);
+        window.innerWidth >= 1200 && navBg.current.classList.add('bgOn');
+    }, []);
 
     const onBgOut = useCallback(() => {
-        viewPort > 1200 && navBg.current.classList.remove('bgOn');
-    }, [viewPort]);
+        window.innerWidth >= 1200 && navBg.current.classList.remove('bgOn');
+    }, []);
 
     const navOpenMo = useCallback(() => {
-        menuIcon.current.classList.toggle('menu_active');
-        navList.current.classList.toggle('menu_active');
+        window.innerWidth < 1200 && menuIcon.current.classList.toggle('menu_active');
+        window.innerWidth < 1200 && navList.current.classList.toggle('menu_active');
     }, []);
 
     const navListOpenMo = useCallback((e) => {
-        console.log('dd')
-        console.log(e.currentTarget.querySelector('ul'))
-        
-   
-        subMenu.classList.remove('sub_menu_active');
+        subMenu.current.forEach((v, i) => {
+            v.classList.remove('sub_menu_active');
+        });
       
-        
-        e.currentTarget.querySelector('ul').classList.add('sub_menu_active');
+        const index = parseInt(e.currentTarget.dataset.index);
+        if (!isNaN(index) && subMenu.current[index]) {
+            subMenu.current[index].classList.add('sub_menu_active');
+        }
     }, []);
 
-    const [header, setHeader] = useState([]);
+    //dispatch 함수 생성
+    const dispatch = useDispatch();
+    //hook을 통해 slice가 관리하는 상태값 가져오기
+    const {data, loading, error} = useSelector((state) => state.HeaderSlice);
 
+    //컴포넌트가 마운트되면 데이터 조회를 위한 액션함수를 디스패치 함
     useEffect(() => {
-        (async () => {
-            try {
-                const response = await axios.get('/data.json');
-                setHeader(response.data.header);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        })();
+        dispatch(getList());
     }, []);
 
 
@@ -420,10 +428,10 @@ const Header = memo(() => {
                             </div>
                             <div ref={navBg} className="nav_background"></div>
                             <ul ref={navList}>
-                                {header.map((v, i) => (
-                                    <li key={i} onMouseEnter={v.submenu && onBgOn} onMouseLeave={onBgOut} onClick={navListOpenMo}>
+                                {data && data.map((v, i) => (
+                                    <li key={i} data-index={i} onMouseEnter={v.submenu && onBgOn} onMouseLeave={onBgOut} onClick={navListOpenMo}>
                                         <MenuLink href={v.url}>{v.title}</MenuLink>
-                                        <ul ref={subMenu} className="sub_menu">
+                                        <ul ref={el=> subMenu.current[i] = el} className="sub_menu">
                                             {v.submenu && v.submenu.map((v, i) => (
                                                 <li key={i}>
                                                     <a href={v.url}>{v.title}</a>

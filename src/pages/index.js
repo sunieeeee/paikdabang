@@ -11,8 +11,6 @@ import btnHouse from "@/assets/img/main/store-ico.png"
 import btnOn from "@/assets/img/main/btn1-on.png"
 
 
-// import Mainmenu from '@/components/mainmenu';
-
 const MainContainer = styled.main`
     margin: 0 auto;
     width: 1920px;

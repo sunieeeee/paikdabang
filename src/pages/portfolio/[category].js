@@ -48,8 +48,6 @@ const portfolioCategory = memo(() => {
         })}
       </ul>
     </div>
-
-    
   );
 });
 
