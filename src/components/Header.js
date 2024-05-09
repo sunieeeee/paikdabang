@@ -12,7 +12,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {getList} from '@/slices/HeaderSlice';
 
 import MenuLink from "@/components/MenuLink";
-import mq from "@/assets/style/MediaQuery.js"
+import mq from "@/assets/style/MediaQuery.js";
 
 import logo from "@/assets/img/header/logo.png";
 import facebook from "@/assets/img/header/facebook-ico.png";

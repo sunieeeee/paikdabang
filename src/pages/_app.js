@@ -25,7 +25,7 @@ const App = memo(({ Component, pageProps }) => {
             <Component {...pageProps} />
 
             <Footer />
-            <TopBtn />
+            {/* <TopBtn /> */}
         </Provider>
     );
 });

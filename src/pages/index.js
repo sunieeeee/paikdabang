@@ -455,20 +455,17 @@ const index = memo(() => {
             </div>
             
             <div className="sns_wrap">
-                <dl>
-                    {hashtag && hashtag.map((v, i) => (
-                        <>
-                            <dt key={i}>{v.title}</dt>
-                            {v.txts && v.txts.map((v, i) => (
-                                <dd key={i}>{v.txt}</dd>
+                {hashtag && hashtag.map((v, i) => (
+                    <dl key={i}>
+                        <dt>{v.title}</dt>
+                        {v.txts && v.txts.map((v, i) => (
+                            <dd key={i}>{v.txt}</dd>
 
-                            ))}
-                        </>
-                    ))}
-                </dl>
+                        ))}
+                    </dl>
+                ))}
                 <Sns />
             </div>
-                
         </MainContainer>
     );
 });

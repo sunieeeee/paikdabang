@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -32,7 +32,7 @@ const TopBtn = memo(() => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
+      const scrollTop = window.scrollY;
 
       if (scrollTop > 300) {
         setIsVisible(true);
@@ -56,10 +56,10 @@ const TopBtn = memo(() => {
   };
 
   return (
-    <Button isVisible={isVisible} onClick={scrollToTop} aria-label="Scroll to top">
+    <StyledButton isVisible={isVisible} onClick={scrollToTop} aria-label="Scroll to top">
       <div>&#9650;</div>
       <p>TOP</p>
-    </Button>
+    </StyledButton>
   );
 });
 

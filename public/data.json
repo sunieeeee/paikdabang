@@ -173,7 +173,7 @@
     {
       "id": 1,
       "category": "menu_new",
-      "bgImage": "/assets/img/category_bg/bg-menu.jpg",
+      "bgImage": "/assets/img/menu/bg/bg-menu.jpg",
       "title": "신메뉴",
       "txt": "지금 바로 가까운 매장에서 빽다방 신메뉴를 만나 보실 수 있습니다.",
       "tab": [
@@ -197,12 +197,62 @@
           "title": "빽스치노",
           "url": "/menu/menu_ccino"
         }
+      ],
+      "menuList": [
+        {
+          "name_ko": "쿨라임스무디",
+          "name_en": null,
+          "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 스무디",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+             "calorie": 376,
+             "natrium": 70,
+             "sugar": 0,
+             "saturatedFat": 0,
+             "protein": 0
+          }          
+        },
+        {
+          "name_ko": "쿨라임에이드",
+          "name_en": null,
+          "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 에이드",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+             "calorie": 189,
+             "natrium": 43,
+             "sugar": 47,
+             "saturatedFat": 0,
+             "protein": 0
+          }          
+        },
+        {
+          "name_ko": "깔라만시스무디",
+          "name_en": null,
+          "desc": "시원한 비주얼을 가진 새콤한 깔라만시 스무디",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+             "calorie": 300,
+             "natrium": 11443,
+             "sugar": 74,
+             "saturatedFat": 0,
+             "protein": 0
+          }          
+        }
       ]
     },
     {
       "id": 2,
       "category": "menu_coffee",
-      "bgImage": "/assets/img/category_bg/bg-menu2.jpg",
+      "bgImage": "/assets/img/menu/bg/bg-menu2.jpg",
       "title": "커피",
       "txt": "뉴 크롭 원두를 사용하여 더욱더 신선한 커피 메뉴를 만나보세요.",
       "tab": [
@@ -226,12 +276,133 @@
           "title": "빽스치노",
           "url": "/menu/menu_ccino"
         }
+      ],
+      "menuList": [
+        {
+          "name_ko": "더블에스프레소",
+          "name_en": "double espresso",
+          "desc": "브라질 원두 블렌딩으로 다크초콜릿, 카라멜, 견과류의 고소함을 느낄 수 있는 에스프레소",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "60ml",
+          "nutrients" : {
+            "caffein": 237,
+            "calorie": 22,
+            "natrium": 0,
+            "sugar": 0,
+            "saturatedFat": 0,
+            "protein": 1
+          }          
+        },
+        {
+          "name_ko": "아메리카노(HOT)",
+          "name_en": "americano",
+          "desc": "빽다방만의 맛과 향을 더한 100% 아라비카 로스팅 원두로 뽑아내 깊고 진한 맛의 앗!메리카노",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "60ml",
+          "nutrients" : {
+            "caffein": 237,
+            "calorie": 14,
+            "natrium": 4,
+            "sugar": 0,
+            "saturatedFat": 0,
+            "protein": 0
+          }          
+        },
+        {
+          "name_ko": "아메리카노(ICED)",
+          "name_en": "americano",
+          "desc": "빽다방만의 맛과 향을 더한 100% 아라비카 로스팅 원두로 뽑아내 깊고 진한 맛의 앗!메리카노",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "24oz",
+          "nutrients" : {
+            "caffein": 237,
+            "calorie": 13,
+            "natrium": 4,
+            "sugar": 0,
+            "saturatedFat": 0,
+            "protein": 0
+          }          
+        },
+        {
+          "name_ko": "원조커피(HOT)",
+          "name_en": "original mixed coffee",
+          "desc": "달콤한 빽다방 대표메뉴, 믹스커피 종결자!",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 406,
+            "calorie": 471,
+            "natrium": 24,
+            "sugar": 57,
+            "saturatedFat": 7,
+            "protein": 3
+          }          
+        },
+        {
+          "name_ko": "원조커피(ICED)",
+          "name_en": "original mixed coffee",
+          "desc": "달콤한 빽다방 대표메뉴, 믹스커피 종결자!",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "24oz",
+          "nutrients" : {
+            "caffein": 371,
+            "calorie": 425,
+            "natrium": 22,
+            "sugar": 48,
+            "saturatedFat": 12,
+            "protein": 3
+          }          
+        },
+        {
+          "name_ko": "원조커피 제로슈거(ICED)",
+          "name_en": "ORIGINAL MIXED COFFEE - ZEROSUGAR",
+          "desc": "빽다방의 대표메뉴 원조커피 제로슈거 버전",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "24oz",
+          "nutrients" : {
+            "caffein": 452,
+            "calorie": 327,
+            "natrium": 74,
+            "sugar": 0,
+            "saturatedFat": 16,
+            "protein": 4
+          }          
+        },
+        {
+          "name_ko": "달달연유라떼(HOT)",
+          "name_en": "condensed milk latte",
+          "desc": "달달하고 향긋한 베트남식 연유라떼",
+          "img": "",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 237,
+            "calorie": 491,
+            "natrium": 199,
+            "sugar": 62,
+            "saturatedFat": 11,
+            "protein": 17
+          }          
+        } 
       ]
     },
     {
       "id": 3,
       "category": "menu_drink",
-      "bgImage": "/assets/img/category_bg/bg-menu3.jpg",
+      "bgImage": "/assets/img/menu/bg/bg-menu3.jpg",
       "title": "음료",
       "txt": "퀄리티 높은 식자재를 사용하여 맛있는 음료를 제공합니다.",
       "tab": [
@@ -260,7 +431,7 @@
     {
       "id": 4,
       "category": "menu_dessert",
-      "bgImage": "/assets/img/category_bg/bg-menu4.jpg",
+      "bgImage": "/assets/img/menu/bg/bg-menu4.jpg",
       "title": "아이스크림/디저트",
       "txt": "달콤 아이스크림부터 든든 브레드까지 다양하게 즐기세요.",
       "tab": [
@@ -289,7 +460,7 @@
     {
       "id": 4,
       "category": "menu_ccino",
-      "bgImage": "/assets/img/category_bg/bg-menu5.jpg",
+      "bgImage": "/assets/img/menu/bg/bg-menu5.jpg",
       "title": "빽스치노",
       "txt": "오직 빽다방에서만 만나보실 수 있는 시그니처 메뉴입니다.",
       "tab": [
@@ -316,4 +487,5 @@
       ]
     }
   ]
+
 }
