@@ -446,18 +446,137 @@
       ],
       "menuList": [
         {
-          "name_ko": "더블에스프레소",
-          "name_en": "double espresso",
-          "desc": "브라질 원두 블렌딩으로 다크초콜릿, 카라멜, 견과류의 고소함을 느낄 수 있는 에스프레소",
-          "img": "/assets/img/menu/coffee/더블에스프레소-2-450x588.png",
+          "name_ko": "쿨라임스무디",
+          "name_en": null,
+          "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 스무디",
+          "img": "/assets/img/menu/drink/쿨라임스무디-450x588.png",
           "new": false,
           "best": true,
-          "standardAmount": "60ml",
+          "standardAmount": "16oz",
           "nutrients" : {
-            "caffein": 237,
-            "calorie": 22,
-            "natrium": 0,
-            "sugar": 0,
+            "caffein": 0,
+            "calorie": 376,
+            "natrium": 70,
+            "sugar": 89,
+            "saturatedFat": 0,
+            "protein": 0
+          }          
+        },
+        {
+          "name_ko": "쿨라임에이드",
+          "name_en": null,
+          "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 스무디",
+          "img": "/assets/img/menu/drink/쿨라임에이드-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 189,
+            "natrium": 43,
+            "sugar": 47,
+            "saturatedFat": 0,
+            "protein": 0.2
+          }          
+        },
+        {
+          "name_ko": "깔라만시스무디",
+          "name_en": null,
+          "desc": "시원한 비주얼을 가진 새콤한 깔라만시 스무디",
+          "img": "/assets/img/menu/drink/깔라만시스무디-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 300,
+            "natrium": 114,
+            "sugar": 74,
+            "saturatedFat": 0,
+            "protein": 0
+          }          
+        },
+        {
+          "name_ko": "성주참외스무디",
+          "name_en": null,
+          "desc": "빽다방 X 성주군 우리가치프로젝트 성주참외로 만든 스무디",
+          "img": "/assets/img/menu/drink/성주참외꿀스무디-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 423,
+            "natrium": 261,
+            "sugar": 71,
+            "saturatedFat": 6,
+            "protein": 9
+          }          
+        },
+        {
+          "name_ko": "소울트로닉에이드(ICED)",
+          "name_en": null,
+          "desc": "빽다방 X 현대자동차 ‘캐스퍼’ 레몬과 자몽의 상큼함이 느껴지는 에이드",
+          "img": "/assets/img/menu/drink/소울트로닉에이드-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 263,
+            "natrium": 40,
+            "sugar": 61,
+            "saturatedFat": 0,
+            "protein": 0.6
+          }          
+        },
+        {
+          "name_ko": "트로피칼팝핑스무디(ICED)",
+          "name_en": null,
+          "desc": "톡톡 튀는 팝핑캔디를 올린 달콤한 맛의 열대과일 스무디",
+          "img": "/assets/img/menu/drink/트로피칼팝핑스무디-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "16oz",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 455,
+            "natrium": 104,
+            "sugar": 96,
+            "saturatedFat": 0.2,
+            "protein": 0.7
+          }          
+        },
+        {
+          "name_ko": "패션후르츠스무디",
+          "name_en": null,
+          "desc": "패션후르츠가 듬뿍 들어가 상콤달콤한 스무디",
+          "img": "/assets/img/menu/drink/패션후르츠스무디_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "594g",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 327,
+            "natrium": 66,
+            "sugar": 75,
+            "saturatedFat": 0,
+            "protein": 0.5
+          }          
+        },
+        {
+          "name_ko": "망고패션스무디",
+          "name_en": null,
+          "desc": "패션후르츠에 망고를 더해 더욱 달콤하고 시원하게 즐기는 스무디",
+          "img": "/assets/img/menu/drink/망고패션스무디_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "617g",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 415,
+            "natrium": 73,
+            "sugar": 86,
             "saturatedFat": 0,
             "protein": 1
           }          
@@ -491,6 +610,144 @@
           "title": "빽스치노",
           "url": "/menu/menu_ccino"
         }
+      ],
+      "menuList": [
+        {
+          "name_ko": "쫀득 감자빵",
+          "name_en": null,
+          "desc": "국내산 감자가 들어있는 짭짤하고 고소한 감자빵",
+          "img": "/assets/img/menu/dessert/감자빵_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": null,
+          "nutrients" : {
+            "caffein": null,
+            "calorie": null,
+            "natrium": null,
+            "sugar": null,
+            "saturatedFat": null,
+            "protein": null
+          }          
+        },
+        {
+          "name_ko": "쫀득 고구마빵",
+          "name_en": null,
+          "desc": "국내산 고구마(앙금 내 수입산 혼용)가 들어있는 달달하고 고소한 고구마빵",
+          "img": "/assets/img/menu/dessert/고구마빵_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": null,
+          "nutrients" : {
+            "caffein": null,
+            "calorie": null,
+            "natrium": null,
+            "sugar": null,
+            "saturatedFat": null,
+            "protein": null
+          }          
+        },
+        {
+          "name_ko": "명란 소금빵",
+          "name_en": null,
+          "desc": "짭조름한 명란맛과 버터의 풍미가 느껴지는 소금빵",
+          "img": "/assets/img/menu/dessert/명란소금빵_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": null,
+          "nutrients" : {
+            "caffein": null,
+            "calorie": null,
+            "natrium": null,
+            "sugar": null,
+            "saturatedFat": null,
+            "protein": null
+          }       
+        },
+        {
+          "name_ko": "황치즈 크럼블 머핀",
+          "name_en": "YELLOW CHEESE CRUMBLE MUFFIN",
+          "desc": "짭짤하고 고소한 황치즈 머핀에 달콤한 크럼블을 곁들인 단짠 디저트",
+          "img": "/assets/img/menu/dessert/황치즈크럼블머핀-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": null,
+          "nutrients" : {
+            "caffein": null,
+            "calorie": null,
+            "natrium": null,
+            "sugar": null,
+            "saturatedFat": null,
+            "protein": null
+          }          
+        },
+        {
+          "name_ko": "크룽지",
+          "name_en": null,
+          "desc": "황설탕 카라멜라이징으로 더 달콤고소한 빅사이즈 크룽지",
+          "img": "/assets/img/menu/dessert/크룽지-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": null,
+          "nutrients" : {
+            "caffein": null,
+            "calorie": null,
+            "natrium": null,
+            "sugar": null,
+            "saturatedFat": null,
+            "protein": null
+          }          
+        },
+        {
+          "name_ko": "노말한소프트",
+          "name_en": "SOFT ICE CREAM",
+          "desc": "입안에서 부드럽게 사르륵 녹는 마성의 아이스크림",
+          "img": "/assets/img/menu/dessert/노말한소프트-3-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "195g",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 333,
+            "natrium": 70,
+            "sugar": 20,
+            "saturatedFat": 17,
+            "protein": 4
+          }            
+        },
+        {
+          "name_ko": "사라다빵",
+          "name_en": "SALAD BREAD",
+          "desc": "어린시절 빵집에서 사먹던 추억의 감자 사라다빵",
+          "img": "/assets/img/menu/dessert/사라다빵-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "187.5g",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 386,
+            "natrium": 498,
+            "sugar": 8,
+            "saturatedFat": 5,
+            "protein": 9
+          }            
+        },
+        {
+          "name_ko": "소세지빵",
+          "name_en": "SAUSAGE BREAD",
+          "desc": "소시지에 치즈를 듬뿍 얹고 옥수수까지 더한 소세지빵",
+          "img": "/assets/img/menu/dessert/소세지빵-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "192.5g",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 500,
+            "natrium": 679,
+            "sugar": 1,
+            "saturatedFat": 11,
+            "protein": 19
+          }            
+        }
       ]
     },
     {
@@ -520,8 +777,45 @@
           "title": "빽스치노",
           "url": "/menu/menu_ccino"
         }
+      ],
+      "menuList": [
+        {
+          "name_ko": "원조빽스치노(BASIC)",
+          "name_en": "ORIGINAL MIXED COFFEE PAIK'S CCINO",
+          "desc": "원조커피의 시원한 변신~! 매력만점 커피 빽스치노",
+          "img": "/assets/img/menu/dessert/감자빵_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "625ml",
+          "nutrients" : {
+            "caffein": 280,
+            "calorie": 578,
+            "natrium": 122,
+            "sugar": 75,
+            "saturatedFat": 16,
+            "protein": 9
+          }          
+        },
+        {
+          "name_ko": "원조빽스치노(SOFT)",
+          "name_en": "ORIGINAL MIXED COFFEE PAIK'S CCINO",
+          "desc": "원조커피의 시원한 변신~! 매력만점 커피 빽스치노",
+          "img": "/assets/img/menu/dessert/감자빵_thumb-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "625ml",
+          "nutrients" : {
+            "caffein": 280,
+            "calorie": 785,
+            "natrium": 166,
+            "sugar": 87,
+            "saturatedFat": 26,
+            "protein": 11
+          }          
+        }
       ]
     }
+  
   ]
 
 }

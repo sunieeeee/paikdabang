@@ -20,7 +20,7 @@ import insta from "@/assets/img/header/insta-ico.png";
 
 
 const HeaderContainer = styled.header`
-z-index: 1;
+z-index: 2;
 position: sticky;
 top: 0;
 background-color: #fff;

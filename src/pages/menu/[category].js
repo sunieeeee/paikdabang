@@ -163,7 +163,13 @@ const SubWrap = styled.div`
         height: 90%;
         background-color: #ffe600cc;
         opacity: 0;
+        visibility: hidden;
         transition: .3s all;
+
+        &.menuActive {
+          opacity: 1;
+          visibility: visible;
+        }
 
         > .menu_close {
           z-index: 2;
@@ -251,13 +257,21 @@ const menuCategory = memo(() => {
   }, [dispatch,category]);
 
   const menuItem = useRef([]);
-  
+
+
   const menuToggle = useCallback((e) => {
 
-    menuItem.current.forEach((v, i) => {
-      v.querySelector('.menu_info').style.opacity = '0';
-    });
-    e.currentTarget.querySelector('.menu_info').style.opacity = '1'
+
+    if (e.currentTarget.querySelector('.menu_info').classList.contains('menuActive')) {
+      e.currentTarget.querySelector('.menu_info').classList.remove('menuActive');
+    } else {
+      menuItem.current.forEach((v, i) => {
+        v.querySelector('.menu_info').classList.remove('menuActive');
+      });
+    
+      e.currentTarget.querySelector('.menu_info').classList.add('menuActive');
+    }
+
   }, []);
 
   return (
@@ -320,36 +334,43 @@ const menuCategory = memo(() => {
                         <p>{v.name_en}</p>
                         <p>{v.desc}</p>
 
-                        <div className='nutrients_wrap'>
-                          <p>※ 1회 제공량 기준 : {v.standardAmount}</p>
-                          <ul className='nutrients_list'>
-                            <li>
-                              <p>카페인 (mg)</p>  
-                              <p>{v.nutrients.caffein}</p>    
-                            </li>
-                            <li>
-                              <p>칼로리 (kcal)</p>
-                              <p>{v.nutrients.calorie}</p>
-                            </li>
-                            <li>
-                              <p>나트륨 (mg)</p>
-                              <p>{v.nutrients.natrium}</p>
-                            </li>
-                            <li>
-                              <p>당류 (g)</p>
-                              <p>{v.nutrients.sugar}</p>
-                            </li>
-                            <li>
-                              <p>포화지방 (g)</p>
-                              <p>{v.nutrients.saturatedFat}</p>
-                            </li>
-                            <li>
-                              <p>단백질 (g)</p>
-                              <p>{v.nutrients.protein}</p>
-                            </li>
-                          </ul>
-                          <p className='notive'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
-                        </div>
+                        {v.standardAmount != null ? (
+                          <div className='nutrients_wrap'>
+                            <p>※ 1회 제공량 기준: {v.standardAmount}</p>
+                            <ul className='nutrients_list'>
+                              <li>
+                                <p>카페인 (mg)</p>
+                                <p>{v.nutrients.caffein}</p>
+                              </li>
+                              <li>
+                                <p>칼로리 (kcal)</p>
+                                <p>{v.nutrients.calorie}</p>
+                              </li>
+                              <li>
+                                <p>나트륨 (mg)</p>
+                                <p>{v.nutrients.natrium}</p>
+                              </li>
+                              <li>
+                                <p>당류 (g)</p>
+                                <p>{v.nutrients.sugar}</p>
+                              </li>
+                              <li>
+                                <p>포화지방 (g)</p>
+                                <p>{v.nutrients.saturatedFat}</p>
+                              </li>
+                              <li>
+                                <p>단백질 (g)</p>
+                                <p>{v.nutrients.protein}</p>
+                              </li>
+                            </ul>
+                            <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
+                          </div>
+                        ) : (
+                          <div className='nutrients_wrap'>
+                            <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
+                          </div>
+                        )}
+                        
                       </div>
                     </li>
                   ))}
