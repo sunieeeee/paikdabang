@@ -6,7 +6,7 @@ import facebook from "@/assets/img/header/facebook-ico.png";
 import insta from "@/assets/img/header/insta-ico.png";
 
 const SnsContainer = styled.ul`
-  padding: 30px 0 80px;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
   gap: 20px;

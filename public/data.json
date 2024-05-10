@@ -282,7 +282,7 @@
           "name_ko": "더블에스프레소",
           "name_en": "double espresso",
           "desc": "브라질 원두 블렌딩으로 다크초콜릿, 카라멜, 견과류의 고소함을 느낄 수 있는 에스프레소",
-          "img": "",
+          "img": "/assets/img/menu/coffee/더블에스프레소-2-450x588.png",
           "new": false,
           "best": true,
           "standardAmount": "60ml",
@@ -299,9 +299,9 @@
           "name_ko": "아메리카노(HOT)",
           "name_en": "americano",
           "desc": "빽다방만의 맛과 향을 더한 100% 아라비카 로스팅 원두로 뽑아내 깊고 진한 맛의 앗!메리카노",
-          "img": "",
+          "img": "/assets/img/menu/coffee/HOT-앗메리카노-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "60ml",
           "nutrients" : {
             "caffein": 237,
@@ -316,7 +316,7 @@
           "name_ko": "아메리카노(ICED)",
           "name_en": "americano",
           "desc": "빽다방만의 맛과 향을 더한 100% 아라비카 로스팅 원두로 뽑아내 깊고 진한 맛의 앗!메리카노",
-          "img": "",
+          "img": "/assets/img/menu/coffee/ICED-앗메리카노-450x588.png",
           "new": false,
           "best": true,
           "standardAmount": "24oz",
@@ -333,9 +333,9 @@
           "name_ko": "원조커피(HOT)",
           "name_en": "original mixed coffee",
           "desc": "달콤한 빽다방 대표메뉴, 믹스커피 종결자!",
-          "img": "",
+          "img": "/assets/img/menu/coffee/HOT-원조커피-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "16oz",
           "nutrients" : {
             "caffein": 406,
@@ -350,9 +350,9 @@
           "name_ko": "원조커피(ICED)",
           "name_en": "original mixed coffee",
           "desc": "달콤한 빽다방 대표메뉴, 믹스커피 종결자!",
-          "img": "",
+          "img": "/assets/img/menu/coffee/ICED-원조커피-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "24oz",
           "nutrients" : {
             "caffein": 371,
@@ -367,7 +367,7 @@
           "name_ko": "원조커피 제로슈거(ICED)",
           "name_en": "ORIGINAL MIXED COFFEE - ZEROSUGAR",
           "desc": "빽다방의 대표메뉴 원조커피 제로슈거 버전",
-          "img": "",
+          "img": "/assets/img/menu/coffee/ICED-원조커피-450x588.png",
           "new": false,
           "best": true,
           "standardAmount": "24oz",
@@ -384,7 +384,7 @@
           "name_ko": "달달연유라떼(HOT)",
           "name_en": "condensed milk latte",
           "desc": "달달하고 향긋한 베트남식 연유라떼",
-          "img": "",
+          "img": "/assets/img/menu/coffee/HOT-달달연유라떼-1-450x588.png",
           "new": false,
           "best": true,
           "standardAmount": "16oz",
@@ -396,7 +396,24 @@
             "saturatedFat": 11,
             "protein": 17
           }          
-        } 
+        },
+        {
+          "name_ko": "바나나 카페라떼(ICED)",
+          "name_en": "BANANA CAFE LATTE",
+          "desc": "진한 바나나맛이 올라오는 바나나라떼에 샷이 추가된 카페라떼",
+          "img": "/assets/img/menu/coffee/바나나카페라떼ICED-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "24oz",
+          "nutrients" : {
+            "caffein": 119,
+            "calorie": 303,
+            "natrium": 150,
+            "sugar": 39,
+            "saturatedFat": 7,
+            "protein": 10
+          }          
+        }  
       ]
     },
     {
@@ -425,6 +442,25 @@
         {
           "title": "빽스치노",
           "url": "/menu/menu_ccino"
+        }
+      ],
+      "menuList": [
+        {
+          "name_ko": "더블에스프레소",
+          "name_en": "double espresso",
+          "desc": "브라질 원두 블렌딩으로 다크초콜릿, 카라멜, 견과류의 고소함을 느낄 수 있는 에스프레소",
+          "img": "/assets/img/menu/coffee/더블에스프레소-2-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "60ml",
+          "nutrients" : {
+            "caffein": 237,
+            "calorie": 22,
+            "natrium": 0,
+            "sugar": 0,
+            "saturatedFat": 0,
+            "protein": 1
+          }          
         }
       ]
     },

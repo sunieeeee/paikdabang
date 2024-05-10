@@ -7,6 +7,7 @@ import flogo from "@/assets/img/footer/flogo.png";
 import { set } from "lodash";
 
 const FooterContainer = styled.footer`
+    margin-top: 80px;
     border-top: 3px solid #ffe600;
     font-size: 14px;
     color: #262626;
@@ -29,7 +30,6 @@ const FooterContainer = styled.footer`
        width: 558px;
 
        li {
-
 
             &::after {
                 content: "";
