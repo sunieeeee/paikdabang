@@ -14,15 +14,22 @@ export const getList = createAsyncThunk('MenuSlice/getList', async (payload, { r
 
     // 카테고리에 해당하는 아이템 필터링
     if (payload.category) {
-      result = subvisualMenu.find(item => item.category === payload.category);
+      if (payload.category === 'menu_new') {
+        result = subvisualMenu;
+      } else {
+        result = subvisualMenu.find(item => item.category === payload.category);
+      }
+
       if (!result) {
         // 해당 카테고리가 존재하지 않을 경우 에러 처리
         throw new Error('No data found for the specified category.');
-      }
+      } 
     } else {
       // 카테고리가 전달되지 않은 경우 전체 데이터 반환
       result = subvisualMenu;
     }
+
+   
   } catch (err) {
     result = rejectWithValue(err.response);
   }

@@ -2,8 +2,8 @@ import React, {memo} from 'react';
 import styled, { css } from 'styled-components';
 
 const SubTitle = styled.h2`
-  padding-top: ${(props) => props.paddingTop};
-  padding-bottom: ${(props) => props.paddingBottom};
+  padding-top: ${(props) => props.$paddingTop};
+  padding-bottom: ${(props) => props.$paddingBottom};
   font-size: 34px;
   text-align: center;
   color: #071F60;
@@ -19,10 +19,10 @@ const SubTitle = styled.h2`
   }
 `
 
-const MenuSubTitle = memo(({children, paddingTop, paddingBottom}) => {
-  console.log(paddingTop)
+const MenuSubTitle = memo(({children, $paddingTop, $paddingBottom}) => {
+  console.log($paddingTop)
   return (
-    <SubTitle paddingTop={paddingTop} paddingBottom={paddingBottom}>{children}</SubTitle>
+    <SubTitle $paddingTop={$paddingTop} $paddingBottom={$paddingBottom}>{children}</SubTitle>
   );
 });
 

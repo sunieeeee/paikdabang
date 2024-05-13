@@ -87,7 +87,7 @@ const Footer = memo(() => {
                     }
                 </ul>
 
-                <p className="copyright">
+                <div className="copyright">
                     {
                         data.copyright.map((v, i)=> {
                             return (
@@ -95,7 +95,7 @@ const Footer = memo(() => {
                             )  
                         })
                     }
-                </p>
+                </div>
             </div>
             
         </FooterContainer>

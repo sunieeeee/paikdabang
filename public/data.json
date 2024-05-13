@@ -197,56 +197,6 @@
           "title": "빽스치노",
           "url": "/menu/menu_ccino"
         }
-      ],
-      "menuList": [
-        {
-          "name_ko": "쿨라임스무디",
-          "name_en": null,
-          "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 스무디",
-          "img": "",
-          "new": false,
-          "best": true,
-          "standardAmount": "16oz",
-          "nutrients" : {
-             "calorie": 376,
-             "natrium": 70,
-             "sugar": 0,
-             "saturatedFat": 0,
-             "protein": 0
-          }          
-        },
-        {
-          "name_ko": "쿨라임에이드",
-          "name_en": null,
-          "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 에이드",
-          "img": "",
-          "new": false,
-          "best": true,
-          "standardAmount": "16oz",
-          "nutrients" : {
-             "calorie": 189,
-             "natrium": 43,
-             "sugar": 47,
-             "saturatedFat": 0,
-             "protein": 0
-          }          
-        },
-        {
-          "name_ko": "깔라만시스무디",
-          "name_en": null,
-          "desc": "시원한 비주얼을 가진 새콤한 깔라만시 스무디",
-          "img": "",
-          "new": false,
-          "best": true,
-          "standardAmount": "16oz",
-          "nutrients" : {
-             "calorie": 300,
-             "natrium": 11443,
-             "sugar": 74,
-             "saturatedFat": 0,
-             "protein": 0
-          }          
-        }
       ]
     },
     {
@@ -283,7 +233,7 @@
           "name_en": "double espresso",
           "desc": "브라질 원두 블렌딩으로 다크초콜릿, 카라멜, 견과류의 고소함을 느낄 수 있는 에스프레소",
           "img": "/assets/img/menu/coffee/더블에스프레소-2-450x588.png",
-          "new": false,
+          "new": true,
           "best": true,
           "standardAmount": "60ml",
           "nutrients" : {
@@ -368,7 +318,7 @@
           "name_en": "ORIGINAL MIXED COFFEE - ZEROSUGAR",
           "desc": "빽다방의 대표메뉴 원조커피 제로슈거 버전",
           "img": "/assets/img/menu/coffee/ICED-원조커피-450x588.png",
-          "new": false,
+          "new": true,
           "best": true,
           "standardAmount": "24oz",
           "nutrients" : {
@@ -451,7 +401,7 @@
           "desc": "라임과 민트의 청량함에 달콤한 맛이 어우러진 스무디",
           "img": "/assets/img/menu/drink/쿨라임스무디-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "16oz",
           "nutrients" : {
             "caffein": 0,
@@ -485,7 +435,7 @@
           "desc": "시원한 비주얼을 가진 새콤한 깔라만시 스무디",
           "img": "/assets/img/menu/drink/깔라만시스무디-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "16oz",
           "nutrients" : {
             "caffein": 0,
@@ -519,7 +469,7 @@
           "desc": "빽다방 X 현대자동차 ‘캐스퍼’ 레몬과 자몽의 상큼함이 느껴지는 에이드",
           "img": "/assets/img/menu/drink/소울트로닉에이드-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "16oz",
           "nutrients" : {
             "caffein": 0,
@@ -536,7 +486,7 @@
           "desc": "톡톡 튀는 팝핑캔디를 올린 달콤한 맛의 열대과일 스무디",
           "img": "/assets/img/menu/drink/트로피칼팝핑스무디-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "16oz",
           "nutrients" : {
             "caffein": 0,
@@ -635,7 +585,7 @@
           "desc": "국내산 고구마(앙금 내 수입산 혼용)가 들어있는 달달하고 고소한 고구마빵",
           "img": "/assets/img/menu/dessert/고구마빵_thumb-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": null,
           "nutrients" : {
             "caffein": null,
@@ -669,7 +619,7 @@
           "desc": "짭짤하고 고소한 황치즈 머핀에 달콤한 크럼블을 곁들인 단짠 디저트",
           "img": "/assets/img/menu/dessert/황치즈크럼블머핀-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": null,
           "nutrients" : {
             "caffein": null,
@@ -685,7 +635,7 @@
           "name_en": null,
           "desc": "황설탕 카라멜라이징으로 더 달콤고소한 빅사이즈 크룽지",
           "img": "/assets/img/menu/dessert/크룽지-450x588.png",
-          "new": false,
+          "new": true,
           "best": true,
           "standardAmount": null,
           "nutrients" : {
@@ -720,7 +670,7 @@
           "desc": "어린시절 빵집에서 사먹던 추억의 감자 사라다빵",
           "img": "/assets/img/menu/dessert/사라다빵-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "187.5g",
           "nutrients" : {
             "caffein": 0,
@@ -737,7 +687,7 @@
           "desc": "소시지에 치즈를 듬뿍 얹고 옥수수까지 더한 소세지빵",
           "img": "/assets/img/menu/dessert/소세지빵-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "192.5g",
           "nutrients" : {
             "caffein": 0,
@@ -783,9 +733,9 @@
           "name_ko": "원조빽스치노(BASIC)",
           "name_en": "ORIGINAL MIXED COFFEE PAIK'S CCINO",
           "desc": "원조커피의 시원한 변신~! 매력만점 커피 빽스치노",
-          "img": "/assets/img/menu/dessert/감자빵_thumb-450x588.png",
+          "img": "/assets/img/menu/paiksccino/원조빽스치노-BASIC-450x588.png",
           "new": false,
-          "best": true,
+          "best": false,
           "standardAmount": "625ml",
           "nutrients" : {
             "caffein": 280,
@@ -800,10 +750,10 @@
           "name_ko": "원조빽스치노(SOFT)",
           "name_en": "ORIGINAL MIXED COFFEE PAIK'S CCINO",
           "desc": "원조커피의 시원한 변신~! 매력만점 커피 빽스치노",
-          "img": "/assets/img/menu/dessert/감자빵_thumb-450x588.png",
+          "img": "/assets/img/menu/paiksccino/원조빽스치노-SOFT-450x588.png",
           "new": false,
-          "best": true,
-          "standardAmount": "625ml",
+          "best": false,
+          "standardAmount": "765ml",
           "nutrients" : {
             "caffein": 280,
             "calorie": 785,
@@ -811,6 +761,125 @@
             "sugar": 87,
             "saturatedFat": 26,
             "protein": 11
+          }          
+        },
+        {
+          "name_ko": "딸기바나나빽스치노(BASIC)",
+          "name_en": "STRAWBERRY & BANANA PAIK'S CCINO",
+          "desc": "상큼한 딸기와 달달한 바나나의 완전 시원한 만남!",
+          "img": "/assets/img/menu/paiksccino/완전딸기바나나-BASIC-450x588.png",
+          "new": true,
+          "best": true,
+          "standardAmount": "625ml",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 500,
+            "natrium": 108,
+            "sugar": 93,
+            "saturatedFat": 2,
+            "protein": 8
+          }          
+        },
+        {
+          "name_ko": "초코바나나빽스치노(SOFT)",
+          "name_en": "CHOCO & BANANA PAIK'S CCINO",
+          "desc": "달콤한 초코와 달달한 바나나의 완전 시원한 만남",
+          "img": "/assets/img/menu/paiksccino/완전초코바나나_빽스치노-SOFT-450x588.png",
+          "new": false,
+          "best": false,
+          "standardAmount": "765ml",
+          "nutrients" : {
+            "caffein": 24,
+            "calorie": 792,
+            "natrium": 237,
+            "sugar": 117,
+            "saturatedFat": 15,
+            "protein": 15
+          }          
+        },
+        {
+          "name_ko": "딸기 빽스치노(BASIC)",
+          "name_en": "STRAWBERRY PAIK'S CCINO",
+          "desc": "상큼한 국산딸기와 우유가 블렌딩된 완전딸기 빽스치노",
+          "img": "/assets/img/menu/paiksccino/완전딸기빽스치노-BASIC-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "765ml",
+          "nutrients" : {
+            "caffein": 0,
+            "calorie": 687,
+            "natrium": 170,
+            "sugar": 98,
+            "saturatedFat": 14,
+            "protein": 10
+          }          
+        },
+        {
+          "name_ko": "녹차빽스치노(BASIC)",
+          "name_en": "GREEN TEA PAIK'S CCINO",
+          "desc": "100% 국내산 녹차를 사용하여 부드럽고 진한 맛의 빽스치노!",
+          "img": "/assets/img/menu/paiksccino/녹차빽스치노-BASIC-450x588.png",
+          "new": true,
+          "best": true,
+          "standardAmount": "625ml",
+          "nutrients" : {
+            "caffein": 260,
+            "calorie": 548,
+            "natrium": 157,
+            "sugar": 90,
+            "saturatedFat": 7,
+            "protein": 10
+          }          
+        },
+        {
+          "name_ko": "민트초코빽스치노(SOFT)",
+          "name_en": "MINT CHOCO PAIK’S CCINO",
+          "desc": "초코칩으로 더한 깊은 초콜릿의 맛과 민트의 상쾌함이 어우러진 진한 민트초코 빽스치노",
+          "img": "/assets/img/menu/paiksccino/민트초코빽스치노-SOFT-450x588.png",
+          "new": false,
+          "best": false,
+          "standardAmount": "770ml",
+          "nutrients" : {
+            "caffein": 51,
+            "calorie": 809,
+            "natrium": 287,
+            "sugar": 40,
+            "saturatedFat": 24,
+            "protein": 15
+          }          
+        },
+        {
+          "name_ko": "쿠키크런치빽스치노(BASIC)",
+          "name_en": "COOKIE CRUNCH PAIK’S CCINO",
+          "desc": "달콤한 쿠키 크런치가 듬뿍 들어간 빽스치노",
+          "img": "/assets/img/menu/paiksccino/쿠키크런치빽스치노-BASIC-450x588.png",
+          "new": false,
+          "best": true,
+          "standardAmount": "628.5g",
+          "nutrients" : {
+            "caffein": 11,
+            "calorie": 768,
+            "natrium": 247,
+            "sugar": 93,
+            "saturatedFat": 15,
+            "protein": 13
+          }          
+        },
+        {
+          "name_ko": "초코빽스치노(SOFT)",
+          "name_en": "CHOCO PAIK’S CCINO",
+          "desc": "초콜릿을 함께 블렌딩하여 더욱 진한 맛의 빽스치노",
+          "img": "/assets/img/menu/paiksccino/완전초코빽스치노-SOFT-450x588.png",
+          "new": true,
+          "best": false,
+          "standardAmount": "690.5g",
+          "nutrients" : {
+            "caffein": 36,
+            "calorie": 694,
+            "natrium": 155,
+            "sugar": 103,
+            "saturatedFat": 15,
+            "protein": 12
           }          
         }
       ]
