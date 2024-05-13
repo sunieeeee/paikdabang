@@ -29,9 +29,9 @@
       "title": "소식",
       "url": "#",
       "submenu": [
-        {"title": "소식", "url": "#"},
-        {"title": "이벤트", "url": "#"},
-        {"title": "친절 우수매장", "url": "#"}
+        {"title": "소식", "url": "/news"},
+        {"title": "이벤트", "url": "/news/?cate=news"},
+        {"title": "친절 우수매장", "url": "/news/?cate=kind"}
       ]
     },
     {
@@ -886,5 +886,4 @@
     }
   
   ]
-
 }

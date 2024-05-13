@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import MenuSubTitle from '@/components/MenuSubTitle';
+import SubVisual from '@/components/SubVisual';
 
 //상태값을 로드하기 위한 hook과 action함수를 dispatch할 hook참조
 import {useSelector, useDispatch} from 'react-redux';
@@ -23,88 +24,6 @@ import {getList} from '@/slices/MenuSlice';
 
 
 
-const SubVisual = styled.div`
-  position: relative;
-  width: 100%;
-  height: 500px;
-  background-image: url( ${(props) => props.$bgImage} );
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  .subvisual_info {
-    position: absolute;
-    left: 50%;
-    top: 28%;
-    transform: translateX(-50%);
-    width: 100%;
-
-    h1 {
-      font-size: 42px;
-      font-weight: 300;
-      text-align: center;
-
-      &::after {
-        content: '';
-        margin: 30px auto 40px;
-        display: block;
-        width: 40px;
-        height: 2px;
-        background-color: #444;
-      }
-    }
-
-    > p {
-      font-size: 20px;
-      text-align: center;
-    }
-  }
-  
-  .subvisual_menu {
-    position: absolute; 
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    display: flex;
-    border: 1px solid #bfbfbf;
-
-    li {
-      width: 170px;
-      height: 38px;
-      
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        color: #444;
-        background-color: #fff;
-        border-right: 1px solid #bfbfbf;
-        transition: .3s background-color;
-      }
-
-      &:last-of-type {
-        a {
-          border: 0;
-        }
-      }
-
-      &:hover {
-        a {
-          background-color: #ffe600;
-        }
-      }
-
-      &.subMenuActive {
-        a {
-          background-color: #ffe600;
-          color: #000;
-        }
-      }
-    }
-  }
-`;
 
 const SwiperContainer = styled.div`
   margin-bottom: 80px;
@@ -112,10 +31,10 @@ const SwiperContainer = styled.div`
   img {
     display: block;
     margin: 0 auto;
-  }
-  
-  p {
-    text-align: center;
+
+    + p {
+      text-align: center;
+    }
   }
 
   .swiper-slide {
@@ -265,24 +184,24 @@ const menuCategory = memo(() => {
   const { category } = router.query;
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector(state => state.MenuSlice);
-  console.log(`/menu/${category}`)
+
   useEffect(() => {
     dispatch(getList({ category }));
     
   }, [dispatch,category]);
-  
-  const menuItem = useRef([]);
 
   const menuToggle = useCallback((e) => {
-    
-    if (e.currentTarget.querySelector('.menu_info').classList.contains('menuActive')) {
-      e.currentTarget.querySelector('.menu_info').classList.remove('menuActive');
-    } else {
-      menuItem.current.forEach((v, i) => {
-        v.querySelector('.menu_info').classList.remove('menuActive');
-      });
-
-      e.currentTarget.querySelector('.menu_info').classList.add('menuActive');
+    const menuInfo = e.currentTarget.querySelector('.menu_info');
+    const isActive = menuInfo.classList.contains('menuActive');
+  
+    // 모든 메뉴 정보 요소의 클래스를 초기화
+    document.querySelectorAll('.menu_info').forEach((info) => {
+      info.classList.remove('menuActive');
+    });
+  
+    // 클릭된 요소에만 메뉴 정보 요소의 클래스를 토글
+    if (!isActive) {
+      menuInfo.classList.add('menuActive');
     }
   }, []);
 
@@ -293,26 +212,26 @@ const menuCategory = memo(() => {
         <div>
           {!data.menuList ? (
             data.map((v, i) => {
-              
-              return(
-                v.category == "menu_new" && (
-                <SubVisual key={i} $bgImage={v.bgImage}>
-                  <div className='subvisual_info'>
-                    <h1>{v.title}</h1>
-                    <p>{v.txt}</p>
-                  </div>
-                  <ul className='subvisual_menu'>
-                    {v.tab && v.tab.map((tab, index) => (
-                      <li  key={index} className={tab.url === `/menu/${category}` ? 'subMenuActive' : ''}>
-                        <a href={tab.url}>{tab.title}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </SubVisual>)
-              )
+              return (
+                v.category === "menu_new" && (
+                  <SubVisual key={v.id} $bgImage={v.bgImage}>
+                    <div className='subvisual_info'>
+                      <h1>{v.title}</h1>
+                      <p>{v.txt}</p>
+                    </div>
+                    <ul className='subvisual_menu'>
+                      {v.tab && v.tab.map((tab, index) => (
+                        <li key={index} className={tab.url === `/menu/${category}` ? 'subMenuActive' : ''}>
+                          <a href={tab.url}>{tab.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </SubVisual>
+                )
+              );
             })
           ) : (
-            <SubVisual $bgImage={data.bgImage}>
+            <SubVisual key={data.id} $bgImage={data.bgImage}>
               <div className='subvisual_info'>
                 <h1>{data.title}</h1>
                 <p>{data.txt}</p>
@@ -329,7 +248,11 @@ const menuCategory = memo(() => {
           
           <div className='inner'>
 
-            <MenuSubTitle $paddingTop="90px" $paddingBottom="30px">추천메뉴</MenuSubTitle>
+
+
+            <MenuSubTitle $paddingTop="90px" $paddingBottom="30px">
+              {data && !data.menuList ? "신메뉴" : "추천메뉴"} 
+            </MenuSubTitle>
 
             <SwiperContainer>
               <Swiper
@@ -344,7 +267,7 @@ const menuCategory = memo(() => {
                       return v.menuList && v.menuList
                         .filter((item) => item.new === true)
                         .map((v, i) => (
-                          <SwiperSlide key={i} onClick={menuToggle} ref={el => menuItem.current[i] = el}>          
+                          <SwiperSlide key={i} onClick={menuToggle}>          
                             <div>
                               <div>
                                 <img src={v.img} alt='' />
@@ -364,10 +287,29 @@ const menuCategory = memo(() => {
                                     <p>※ 1회 제공량 기준: {v.standardAmount}</p>
                                     <ul className='nutrients_list'>
                                       <li>
-                                        <p>카페인 (mg)</p>
-                                        <p>{v.nutrients.caffein}</p>
+                                        <p>카페인 (mg)</p>  
+                                        <p>{v.nutrients.caffein}</p>    
                                       </li>
-                                      {/* 이하 생략 */}
+                                      <li>
+                                        <p>칼로리 (kcal)</p>
+                                        <p>{v.nutrients.calorie}</p>
+                                      </li>
+                                      <li>
+                                        <p>나트륨 (mg)</p>
+                                        <p>{v.nutrients.natrium}</p>
+                                      </li>
+                                      <li>
+                                        <p>당류 (g)</p>
+                                        <p>{v.nutrients.sugar}</p>
+                                      </li>
+                                      <li>
+                                        <p>포화지방 (g)</p>
+                                        <p>{v.nutrients.saturatedFat}</p>
+                                      </li>
+                                      <li>
+                                        <p>단백질 (g)</p>
+                                        <p>{v.nutrients.protein}</p>
+                                      </li>
                                     </ul>
                                     <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
                                   </div>
@@ -384,7 +326,7 @@ const menuCategory = memo(() => {
                   ) : (
                     <>
                       {data.menuList.filter((v) => v.best === true).map((v, i) => (
-                        <SwiperSlide key={i} onClick={menuToggle} ref={el => menuItem.current[i] = el}>          
+                        <SwiperSlide key={i} onClick={menuToggle}>          
                           <div>
                             <div>
                               <img src={v.img} alt='' />
@@ -404,10 +346,29 @@ const menuCategory = memo(() => {
                                     <p>※ 1회 제공량 기준: {v.standardAmount}</p>
                                     <ul className='nutrients_list'>
                                       <li>
-                                        <p>카페인 (mg)</p>
-                                        <p>{v.nutrients.caffein}</p>
+                                        <p>카페인 (mg)</p>  
+                                        <p>{v.nutrients.caffein}</p>    
                                       </li>
-                                      {/* 이하 생략 */}
+                                      <li>
+                                        <p>칼로리 (kcal)</p>
+                                        <p>{v.nutrients.calorie}</p>
+                                      </li>
+                                      <li>
+                                        <p>나트륨 (mg)</p>
+                                        <p>{v.nutrients.natrium}</p>
+                                      </li>
+                                      <li>
+                                        <p>당류 (g)</p>
+                                        <p>{v.nutrients.sugar}</p>
+                                      </li>
+                                      <li>
+                                        <p>포화지방 (g)</p>
+                                        <p>{v.nutrients.saturatedFat}</p>
+                                      </li>
+                                      <li>
+                                        <p>단백질 (g)</p>
+                                        <p>{v.nutrients.protein}</p>
+                                      </li>
                                     </ul>
                                     <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
                                   </div>
@@ -426,83 +387,59 @@ const menuCategory = memo(() => {
 
             <SubWrap>
                 <ul className='menu_list'>
-                {data && !data.menuList ? (
-                  <>
-                    {data && !data.menuList && data.map((v, i) => {
-                      return v.menuList && v.menuList
-                        .filter((item) => item.new === true)
-                        .map((v, i) => (
-                          <li key={i} onClick={menuToggle} ref={el => menuItem.current[i] = el}>
-                          <img src={v.img} alt='' />
-                          <p>{v.name_ko}</p>
+                {data && data.menuList && data.menuList.map((v, i) => (
+                    <li key={i} onClick={menuToggle}>
+                      <img src={v.img} alt='' />
+                      <p>{v.name_ko}</p>
 
-                          <MenuInfo className='menu_info' $infoHeight='90%'>
-                            <button className='menu_close'>
-                              <img src='/assets/img/menu/coffee/menu-close.png' alt='' />
-                            </button>
-                            <h4>{v.name_ko}</h4>
-                            <p>{v.name_en}</p>
-                            <p>{v.desc}</p>
+                      <MenuInfo className='menu_info' $infoHeight='90%'>
+                        <button className='menu_close'>
+                          <img src='/assets/img/menu/coffee/menu-close.png' alt='' />
+                        </button>
+                        <h4>{v.name_ko}</h4>
+                        <p>{v.name_en}</p>
+                        <p>{v.desc}</p>
 
-                            {v.standardAmount != null ? (
-                              <div className='nutrients_wrap'>
-                                <p>※ 1회 제공량 기준: {v.standardAmount}</p>
-                                <ul className='nutrients_list'>
-                                  <li>
-                                    <p>카페인 (mg)</p>
-                                    <p>{v.nutrients.caffein}</p>
-                                  </li>
-                                  {/* 이하 생략 */}
-                                </ul>
-                                <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
-                              </div>
-                            ) : (
-                              <div className='nutrients_wrap'>
-                                <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
-                              </div>
-                            )}
-                          </MenuInfo>
-                        </li>
-                        ));
-                    })}
-                  </>
-                  ) : (
-                    <>
-                      {data.menuList.map((v, i) => (
-                        <li key={i} onClick={menuToggle} ref={el => menuItem.current[i] = el}>
-                          <img src={v.img} alt='' />
-                          <p>{v.name_ko}</p>
-
-                          <MenuInfo className='menu_info' $infoHeight='90%'>
-                            <button className='menu_close'>
-                              <img src='/assets/img/menu/coffee/menu-close.png' alt='' />
-                            </button>
-                            <h4>{v.name_ko}</h4>
-                            <p>{v.name_en}</p>
-                            <p>{v.desc}</p>
-
-                            {v.standardAmount != null ? (
-                              <div className='nutrients_wrap'>
-                                <p>※ 1회 제공량 기준: {v.standardAmount}</p>
-                                <ul className='nutrients_list'>
-                                  <li>
-                                    <p>카페인 (mg)</p>
-                                    <p>{v.nutrients.caffein}</p>
-                                  </li>
-                                  {/* 이하 생략 */}
-                                </ul>
-                                <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
-                              </div>
-                            ) : (
-                              <div className='nutrients_wrap'>
-                                <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
-                              </div>
-                            )}
-                          </MenuInfo>
-                        </li>
-                      ))}
-                    </>
-                  )}
+                        {v.standardAmount != null ? (
+                          <div className='nutrients_wrap'>
+                            <p>※ 1회 제공량 기준: {v.standardAmount}</p>
+                            <ul className='nutrients_list'>
+                              <li>
+                                <p>카페인 (mg)</p>  
+                                <p>{v.nutrients.caffein}</p>    
+                              </li>
+                              <li>
+                                <p>칼로리 (kcal)</p>
+                                <p>{v.nutrients.calorie}</p>
+                              </li>
+                              <li>
+                                <p>나트륨 (mg)</p>
+                                <p>{v.nutrients.natrium}</p>
+                              </li>
+                              <li>
+                                <p>당류 (g)</p>
+                                <p>{v.nutrients.sugar}</p>
+                              </li>
+                              <li>
+                                <p>포화지방 (g)</p>
+                                <p>{v.nutrients.saturatedFat}</p>
+                              </li>
+                              <li>
+                                <p>단백질 (g)</p>
+                                <p>{v.nutrients.protein}</p>
+                              </li>
+                            </ul>
+                            <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
+                          </div>
+                        ) : (
+                          <div className='nutrients_wrap'>
+                            <p className='notice'>(매장 상황에 따라 판매하지 않을 수 있습니다.)</p>
+                          </div>
+                        )}
+                      </MenuInfo>
+                    </li>
+                  ))
+                 }
                 </ul>
             </SubWrap>
           </div>
