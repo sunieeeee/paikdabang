@@ -24,9 +24,6 @@ export const getList = createAsyncThunk('MenuSlice/getList', async (payload, { r
         // 해당 카테고리가 존재하지 않을 경우 에러 처리
         throw new Error('No data found for the specified category.');
       } 
-    } else {
-      // 카테고리가 전달되지 않은 경우 전체 데이터 반환
-      result = subvisualMenu;
     }
 
    

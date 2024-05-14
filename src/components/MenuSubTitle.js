@@ -20,7 +20,7 @@ const SubTitle = styled.h2`
 `
 
 const MenuSubTitle = memo(({children, $paddingTop, $paddingBottom}) => {
-  console.log($paddingTop)
+
   return (
     <SubTitle $paddingTop={$paddingTop} $paddingBottom={$paddingBottom}>{children}</SubTitle>
   );

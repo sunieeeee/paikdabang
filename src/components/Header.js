@@ -348,7 +348,7 @@ const Header = memo(() => {
     useEffect(() => {
         const handleResize = () => {
             setUseViewPort(window.innerWidth);
-            console.log(viewPort);
+            // console.log(viewPort);
         };
     
         window.addEventListener('resize', handleResize);

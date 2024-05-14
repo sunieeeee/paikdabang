@@ -27,19 +27,19 @@
     {
       "id": "3",
       "title": "소식",
-      "url": "#",
+      "url": "/news",
       "submenu": [
-        {"title": "소식", "url": "/news"},
-        {"title": "이벤트", "url": "/news/?cate=news"},
-        {"title": "친절 우수매장", "url": "/news/?cate=kind"}
+        {"title": "소식", "url": "/news/cate_news"},
+        {"title": "이벤트", "url": "/news/cate_event"},
+        {"title": "친절 우수매장", "url": "/news/cate_kind"}
       ]
     },
     {
       "id": "4",
       "title": "커뮤니티",
-      "url": "#",
+      "url": "/community/coffeclass",
       "submenu": [
-        {"title": "커피 클래스", "url": "#"}
+        {"title": "커피 클래스", "url": "/community/coffeclass"}
       ]
     },
     {
@@ -884,6 +884,231 @@
         }
       ]
     }
-  
+  ],
+  "news_tab": [
+    {
+      "id": 1,
+      "bgImage": "/assets/img/news/bg-news.jpg",
+      "title": "소식",
+      "txt": "다양한 이벤트와 새로운 소식을 확인하세요!",
+      "tab": [
+        {
+          "title": "전체보기",
+          "url": "/news/cate_all"
+        },
+        {
+          "title": "소식",
+          "url": "/news/cate_news"
+        },
+        {
+          "title": "이벤트",
+          "url": "/news/cate_event"
+        },
+        {
+          "title": "친절우수매장",
+          "url": "/news/cate_kind"
+        },
+        {
+          "title": "찾아가는 빽다방",
+          "url": "/news/cate_visit"
+        }
+      ]  
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "group": "이벤트",
+      "category": "cate_event",
+      "title": "[빽다방X에어마카오] 열대음료 마시고, 마카오로 여행가자!",
+      "regi_date": "2024-05-10",
+      "view_cnt": "2410",
+      "content_img": "/assets/img/news/post_1.jpg"
+    },
+    {
+      "id": "2",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "상큼하고 청량감 넘치는 쿨라임, 깔라만시 신메뉴",
+      "regi_date": "2024-04-22",
+      "view_cnt": "269",
+      "content_img": "/assets/img/news/post_2.jpg"
+    },
+    {
+      "id": "3",
+      "group": "이벤트",
+      "category": "cate_event",
+      "title": "[빽다방 X 현대자동차] 신메뉴 마시면, 캐스퍼 경품이벤트 자동응모!",
+      "regi_date": "2024-03-21",
+      "view_cnt": "11985",
+      "content_img": "/assets/img/news/post_3.jpg"
+    },
+    {
+      "id": "4",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "빽다방 X 현대자동차 ‘캐스퍼’와 협업, 콜라보 음료 출시",
+      "regi_date": "2024-03-21",
+      "view_cnt": "1116",
+      "content_img": "/assets/img/news/post_4.jpg"
+    },
+    {
+      "id": "5",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "봄맞이 신메뉴, 블루캔디밀크쉐이크 & 트로피칼팝핑스무디",
+      "regi_date": "2024-03-21",
+      "view_cnt": "1140",
+      "content_img": "/assets/img/news/post_5.jpg"
+    },
+    {
+      "id": "6",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "은은한 향과 달콤한 풍미가 돋보이는 ‘수정과’",
+      "regi_date": "2024-02-06",
+      "view_cnt": "625",
+      "content_img": "/assets/img/news/post_6.jpg"
+    },
+    {
+      "id": "7",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "#우리가치프로젝트 국내산 농산물로 더 맛있고 든든한 신메뉴",
+      "regi_date": "2024-01-04",
+      "view_cnt": "1039",
+      "content_img": "/assets/img/news/post_7.jpg"
+    },
+    {
+      "id": "8",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "당류 걱정없이 즐기는 빽다방 베스트 메뉴, 원조커피 제로슈거",
+      "regi_date": "2023-12-21",
+      "view_cnt": "5976",
+      "content_img": "/assets/img/news/post_8.jpg"
+    },
+    {
+      "id": "9",
+      "group": "이벤트",
+      "category": "cate_event",
+      "title": "빽다방, 군인•경찰•소방관 위한 감사 프로모션 진행",
+      "regi_date": "2023-12-08",
+      "view_cnt": "3506",
+      "content_img": "/assets/img/news/post_9.jpg"
+    },
+    {
+      "id": "10",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "추운 겨울, 몸을 따뜻하게 녹여줄 ‘뱅쇼’",
+      "regi_date": "2023-11-28",
+      "view_cnt": "1761",
+      "content_img": "/assets/img/news/post_10.jpg"
+    },
+    {
+      "id": "11",
+      "group": "이벤트",
+      "category": "cate_event",
+      "title": "[빽다방X놀자곰] 2024 빽다방 캘린더 프로모션 안내 *추가 진행매장 안내",
+      "regi_date": "2023-11-07",
+      "view_cnt": "39131",
+      "content_img": "/assets/img/news/post_11.jpg"
+    },
+    {
+      "id": "12",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "짭짤한 황치즈 머핀에 달콤한 크럼블을 올린 단짠 디저트 ‘황치즈 크럼블 머핀’",
+      "regi_date": "2023-09-20",
+      "view_cnt": "1411",
+      "content_img": "/assets/img/news/post_12.jpg"
+    },
+    {
+      "id": "13",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "꾸준히 사랑받는 빽다방 고구마, 꿀밤 음료 3종 시즌백",
+      "regi_date": "2023-09-20",
+      "view_cnt": "1279",
+      "content_img": "/assets/img/news/post_13.jpg"
+    },
+    {
+      "id": "14",
+      "group": "소식",
+      "category": "cate_news",
+      "title": "빽다방, 엑소 정규7집 발매 기념 한정판 음료 ‘크림소다’ 출시",
+      "regi_date": "2023-08-01",
+      "view_cnt": "3365",
+      "content_img": "/assets/img/news/post_14.jpg"
+    },
+    {
+      "id": "15",
+      "group": "친절우수매장",
+      "category": "cate_kind",
+      "title": "2019년 4분기 빽다방 “친절 우수매장”",
+      "regi_date": "2020-01-22",
+      "view_cnt": "21811",
+      "content_img": "/assets/img/news/post_15.jpg"
+    },
+    {
+      "id": "16",
+      "group": "친절우수매장",
+      "category": "cate_kind",
+      "title": "2019년 3분기 빽다방 “친절 우수매장”",
+      "regi_date": "2019-10-17",
+      "view_cnt": "8561",
+      "content_img": "/assets/img/news/post_16.jpg"
+    },
+    {
+      "id": "17",
+      "group": "친절우수매장",
+      "category": "cate_kind",
+      "title": "2019년 2분기 빽다방 “친절 우수매장”",
+      "regi_date": "2019-07-11",
+      "view_cnt": "7517",
+      "content_img": "/assets/img/news/post_17.jpg"
+    },
+    {
+      "id": "18",
+      "group": "친절우수매장",
+      "category": "cate_kind",
+      "title": "2019년 1분기 빽다방 “친절 우수매장”",
+      "regi_date": "2019-04-11",
+      "view_cnt": "8413",
+      "content_img": "/assets/img/news/post_18.jpg"
+    },
+    {
+      "id": "19",
+      "group": "찾아가는 빽다방",
+      "category": "cate_visit",
+      "title": "빽다방 커피트럭이 세종대를 찾아갔어요!",
+      "regi_date": "2023-06-21",
+      "view_cnt": "1655",
+      "content_img": "/assets/img/news/post_19.jpg"
+    },
+    {
+      "id": "20",
+      "group": "찾아가는 빽다방",
+      "category": "cate_visit",
+      "title": "빽다방 커피트럭이 숭의여대를 찾아갔어요!",
+      "regi_date": "2023-05-11",
+      "view_cnt": "1462",
+      "content_img": "/assets/img/news/post_20.jpg"
+    }
+  ],
+  "community_tab": [
+    {
+      "id": 1,
+      "bgImage": "/assets/img/community/bg-class.jpg",
+      "title": "커피 클래스",
+      "txt": "모든 커피 이야기가 시작되는 곳! 커피 클래스에 오신 것을 환영합니다.",
+      "tab": [
+        {
+          "title": "커피클래스 신청",
+          "url": "/community/coffeeclass"
+        }
+      ]  
+    }
   ]
 }
