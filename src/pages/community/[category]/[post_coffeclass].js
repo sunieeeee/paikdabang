@@ -3,10 +3,10 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-import NewsVisual from '@/components/NewsVisual';
+import CommunityVisual from '@/components/CommunityVisual';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {getItem} from '@/slices/NewsSlice';
+import {getItem} from '@/slices/CommunitySlice';
 import { createKey } from 'next/dist/shared/lib/router/router';
 import Link from 'next/link';
 
@@ -78,35 +78,24 @@ const ListView = styled.div`
 
 const menuCategory = memo(() => {
   const router = useRouter();
-  const { post_news } = router.query;
+  const { post_coffeclass } = router.query;
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector(state => state.NewsSlice);
+  const { data, loading, error } = useSelector(state => state.CommunitySlice);
   useEffect(() => {
-    dispatch(getItem({ post_news }));
+    dispatch(getItem({ post_coffeclass }));
     
-  }, [dispatch,post_news]);
+  }, [dispatch,post_coffeclass]);
 
 
   return (
     <>
-      <NewsVisual />
+      <CommunityVisual />
       <div className='inner'>
         <PostContent>
-          <div className='post_title'>
-          {data && data.map(v => <h2 key={v.id}><span className='group'>[{v.group}]</span>{v.title}</h2>)}
-            <ul>
-              {data && data.map(v => <li key={v.id}>{v.regi_date}</li>)}
-              {data && data.map(v => <li key={v.id}>조회수 {v.view_cnt}</li>)}
-            </ul>
-          </div>
           <div className='post_content'>
           {data && data.map(v => <img key={v.id} src={v.content_img} alt=''/>)}
           </div>
         </PostContent>
-
-        <ListView>
-          <Link href='/news/cate_all'>목록</Link>
-        </ListView>
       </div>
     </>
   );

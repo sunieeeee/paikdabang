@@ -37,9 +37,9 @@
     {
       "id": "4",
       "title": "커뮤니티",
-      "url": "/community/coffeclass",
+      "url": "/community/coffeeclass",
       "submenu": [
-        {"title": "커피 클래스", "url": "/community/coffeclass"}
+        {"title": "커피 클래스", "url": "/community/coffeeclass"}
       ]
     },
     {
@@ -47,7 +47,7 @@
       "title": "매장안내",
       "url": "#",
       "submenu": [
-        {"title": "매장찾기", "url": "#"}
+        {"title": "매장찾기", "url": "/store"}
       ]
     },
     {
@@ -1109,6 +1109,67 @@
           "url": "/community/coffeeclass"
         }
       ]  
+    }
+  ],
+  "community": [
+    {
+      "id": "1",
+      "category": "coffeeclass",
+      "title": "4월 커피클래스",
+      "state": "종료",
+      "date": "2020.04.10 - 2020.04.14",
+      "title_img": "/assets/img/community/커피세미나_04.jpg",
+      "content_img": "/assets/img/community/0410_커피세미나-1.jpg"
+    },
+    {
+      "id": "2",
+      "category": "coffeeclass",
+      "title": "1월 커피클래스",
+      "state": "종료",
+      "date": "2020.01.10 - 2020.01.16",
+      "title_img": "/assets/img/community/커피세미나_1.jpg",
+      "content_img": "/assets/img/community/0121_커피세미나.jpg"
+    },
+    {
+      "id": "3",
+      "category": "coffeeclass",
+      "title": "12월 커피클래스",
+      "state": "종료",
+      "date": "2019.12.06 - 2019.12.12",
+      "title_img": "/assets/img/community/커피세미나_12.jpg",
+      "content_img": "/assets/img/community/1206_커피세미나.jpg"
+    },
+    {
+      "id": "4",
+      "category": "coffeeclass",
+      "title": "11월 커피클래스",
+      "state": "종료",
+      "date": "2019.11.04 - 2019.11.10",
+      "title_img": "/assets/img/community/커피세미나_11.jpg",
+      "content_img": "/assets/img/community/1113_커피세미나-1.jpg"
+    }
+  ],
+  "store_tab": [
+    {
+      "id": 1,
+      "bgImage": "/assets/img/store/store-bg.jpg",
+      "title": "매장찾기",
+      "txt": "원하시는 지역의 매장을 검색해 보세요!"
+    }
+  ],
+  "store": [
+    {
+      "id": "1",
+      "region": "서울특별시",
+      "city": "강남구",
+      "store_name": "강남을지논현점",
+      "address": "서울특별시 강남구 논현동 64-8",
+      "tel": "070-4333-0808",
+      "weekday_hours": "09:00 ~ 20:00",
+      "weekend_hours": "09:00 ~ 19:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 3개 / 좌석 6석"
     }
   ]
 }
