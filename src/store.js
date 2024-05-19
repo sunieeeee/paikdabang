@@ -4,6 +4,9 @@ import MenuSlice from './slices/MenuSlice';
 import NewsSlice from './slices/NewsSlice';
 import NewsVisualSlice from './slices/NewsVisualSlice';
 import CommunityVisualSlice from './slices/CommunityVisualSlice';
+import CommunitySlice from './slices/CommunitySlice';
+import StoreVisualSlice from './slices/StoreVisualSlice';
+import StoreSearchSlice from './slices/StoreSearchSlice';
 
 const store = configureStore({
   reducer: {
@@ -14,6 +17,9 @@ const store = configureStore({
     NewsSlice: NewsSlice,
     NewsVisualSlice: NewsVisualSlice,
     CommunityVisualSlice: CommunityVisualSlice,
+    CommunitySlice: CommunitySlice,
+    StoreVisualSlice: StoreVisualSlice,
+    StoreSearchSlice: StoreSearchSlice
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false})
 });

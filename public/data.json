@@ -15,7 +15,7 @@
     {
       "id": "2",
       "title": "메뉴",
-      "url": "#",
+      "url": "/menu/menu_new",
       "submenu": [
         {"title": "신메뉴", "url": "/menu/menu_new"},
         {"title": "커피", "url": "/menu/menu_coffee"},
@@ -27,7 +27,7 @@
     {
       "id": "3",
       "title": "소식",
-      "url": "/news",
+      "url": "/news/cate_all",
       "submenu": [
         {"title": "소식", "url": "/news/cate_news"},
         {"title": "이벤트", "url": "/news/cate_event"},
@@ -37,17 +37,17 @@
     {
       "id": "4",
       "title": "커뮤니티",
-      "url": "/community/coffeclass",
+      "url": "/community/coffeeclass",
       "submenu": [
-        {"title": "커피 클래스", "url": "/community/coffeclass"}
+        {"title": "커피 클래스", "url": "/community/coffeeclass"}
       ]
     },
     {
       "id": "5",
       "title": "매장안내",
-      "url": "#",
+      "url": "/store",
       "submenu": [
-        {"title": "매장찾기", "url": "#"}
+        {"title": "매장찾기", "url": "/store"}
       ]
     },
     {
@@ -1109,6 +1109,235 @@
           "url": "/community/coffeeclass"
         }
       ]  
+    }
+  ],
+  "community": [
+    {
+      "id": "1",
+      "category": "coffeeclass",
+      "title": "4월 커피클래스",
+      "state": "종료",
+      "date": "2020.04.10 - 2020.04.14",
+      "title_img": "/assets/img/community/커피세미나_04.jpg",
+      "content_img": "/assets/img/community/0410_커피세미나-1.jpg"
+    },
+    {
+      "id": "2",
+      "category": "coffeeclass",
+      "title": "1월 커피클래스",
+      "state": "종료",
+      "date": "2020.01.10 - 2020.01.16",
+      "title_img": "/assets/img/community/커피세미나_1.jpg",
+      "content_img": "/assets/img/community/0121_커피세미나.jpg"
+    },
+    {
+      "id": "3",
+      "category": "coffeeclass",
+      "title": "12월 커피클래스",
+      "state": "종료",
+      "date": "2019.12.06 - 2019.12.12",
+      "title_img": "/assets/img/community/커피세미나_12.jpg",
+      "content_img": "/assets/img/community/1206_커피세미나.jpg"
+    },
+    {
+      "id": "4",
+      "category": "coffeeclass",
+      "title": "11월 커피클래스",
+      "state": "종료",
+      "date": "2019.11.04 - 2019.11.10",
+      "title_img": "/assets/img/community/커피세미나_11.jpg",
+      "content_img": "/assets/img/community/1113_커피세미나-1.jpg"
+    }
+  ],
+  "store_tab": [
+    {
+      "id": 1,
+      "bgImage": "/assets/img/store/store-bg.jpg",
+      "title": "매장찾기",
+      "txt": "원하시는 지역의 매장을 검색해 보세요!"
+    }
+  ],
+  "store": [
+    {
+      "id": "1",
+      "region": "서울특별시",
+      "city": "강남구",
+      "store_name": "강남을지논현점",
+      "address": "서울특별시 강남구 논현동 64-8",
+      "tel": "070-4333-0808",
+      "weekday_hours": "09:00 ~ 20:00",
+      "weekend_hours": "09:00 ~ 19:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 3개 / 좌석 6석",
+      "store_img": "/assets/img/store/강남을지논현점.png"
+    },
+    {
+      "id": "2",
+      "region": "서울특별시",
+      "city": "강남구",
+      "store_name": "대치사거리점",
+      "address": "서울특별시 강남구 삼성로 345",
+      "tel": "070-4151-3080",
+      "weekday_hours": "09:00 ~ 20:00",
+      "weekend_hours": "09:00 ~ 19:00",
+      "parking": "인근 공용주차장",
+      "dayoff": "연중무휴",
+      "seat": "테이블 3개 / 좌석 6석",
+      "store_img": ""
+    },
+    {
+      "id": "3",
+      "region": "서울특별시",
+      "city": "강남구",
+      "store_name": "일원영희초교점",
+      "address": "서울 강남구 일원로 3길20, 1층 빽다방",
+      "tel": "02-451-1103",
+      "weekday_hours": "08:30 ~ 21:00",
+      "weekend_hours": "09:00 ~ 19:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 12개 / 좌석 24석",
+      "store_img": ""
+    },
+    {
+      "id": "3",
+      "region": "서울특별시",
+      "city": "강동구",
+      "store_name": "강동비즈밸리점",
+      "address": "서울 강동구 고덕비즈밸리로 26, B동 1층 117호",
+      "tel": "02-6072-0660",
+      "weekday_hours": "평일 07:30 ~ 19:00 (라스트오더 18:30)",
+      "weekend_hours": "토요일 08:00 ~ 15:00 (라스트오더 14:30)",
+      "parking": "가능",
+      "dayoff": "매주 일요일",
+      "seat": "테이블 4개 / 좌석 8석",
+      "store_img": ""
+    },
+    {
+      "id": "4",
+      "region": "서울특별시",
+      "city": "강동구",
+      "store_name": "길동역점",
+      "address": "서울 강동구 길동 391-5",
+      "tel": "02-6072-0660",
+      "weekday_hours": "평일,토요일 08:00 ~ 22:00",
+      "weekend_hours": "주말 10:00 ~ 22:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 6개 / 좌석 12석"
+    },
+    {
+      "id": "5",
+      "region": "서울특별시",
+      "city": "강서구",
+      "store_name": "화곡중앙시장점",
+      "address": "서울특별시 강서구 가로공원로76길 75",
+      "tel": "02-6072-0660",
+      "weekday_hours": "08:00 ~ 22:00",
+      "weekend_hours": "10:00 ~ 22:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 6개 / 좌석 12석",
+      "store_img": ""
+    },
+    {
+      "id": "6",
+      "region": "서울특별시",
+      "city": "강서구",
+      "store_name": "가양중앙점",
+      "address": "서울특별시 강서구 양천로57길 13",
+      "tel": "070-4012-7107",
+      "weekday_hours": "월~토 08:00 ~ 22:00",
+      "weekend_hours": "일요일 08:00 ~ 21:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 7개 / 좌석 14석",
+      "store_img": ""
+    },
+    {
+      "id": "7",
+      "region": "서울특별시",
+      "city": "관악구",
+      "store_name": "서원역점",
+      "address": "서울 관악구 신림로 264 1층 101호",
+      "tel": "미등록",
+      "weekday_hours": "평일 08:00 ~ 22:00",
+      "weekend_hours": "주말 08:00 ~ 21:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 2개 / 좌석 4석",
+      "store_img": ""
+    },
+    {
+      "id": "8",
+      "region": "서울특별시",
+      "city": "관악구",
+      "store_name": "사당네스코점",
+      "address": "서울 관악구 남부순환로 2064",
+      "tel": "미등록",
+      "weekday_hours": "평일 08:00 ~ 21:00",
+      "weekend_hours": "주말 09:00 ~ 21:00",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "테이블 12개 / 좌석 24석",
+      "store_img": ""
+    },
+    {
+      "id": "9",
+      "region": "서울특별시",
+      "city": "관악구",
+      "store_name": "신림역2호점",
+      "address": "서울 관악구 신림로 324 1층",
+      "tel": "미등록",
+      "weekday_hours": "평일 08:30 ~ 21:30",
+      "weekend_hours": "주말 09:30 ~ 21:30",
+      "parking": "불가",
+      "dayoff": "연중무휴",
+      "seat": "없음",
+      "store_img": ""
+    },
+    {
+      "id": "10",
+      "region": "경기도",
+      "city": "고양시",
+      "store_name": "일산식사구제거리점",
+      "address": "경기도 고양시 일산동구 견달산로 265",
+      "tel": "070-4107-7077",
+      "weekday_hours": "평일 08:00 ~ 20:00",
+      "weekend_hours": "주말 09:00 ~ 20:00",
+      "parking": "가능",
+      "dayoff": "연중무휴",
+      "seat": "테이블 20개 / 좌석 40석",
+      "store_img": ""
+    },
+    {
+      "id": "11",
+      "region": "경기도",
+      "city": "고양시",
+      "store_name": "고양일고점",
+      "address": "경기도 고양시 덕양구 읍내로 10",
+      "tel": "070-8657-1793",
+      "weekday_hours": "평일 09:00 ~ 20:30",
+      "weekend_hours": "주말 09:00 ~ 20:00",
+      "parking": "매장 앞 주차장 30분 무료 주차 가능",
+      "dayoff": "연중무휴",
+      "seat": "테이블 8개 / 좌석 16석",
+      "store_img": ""
+    },
+    {
+      "id": "12",
+      "region": "경기도",
+      "city": "부천시",
+      "store_name": "부천춘의점",
+      "address": "경기도 부천시 원미구 부천로198번길 27",
+      "tel": "미등록",
+      "weekday_hours": "평일 07:00 ~ 20:00",
+      "weekend_hours": "주말 08:00 ~ 20:00",
+      "parking": "가능",
+      "dayoff": "매주 일요일",
+      "seat": "테이블 10개 / 좌석 120석",
+      "store_img": ""
     }
   ]
 }
