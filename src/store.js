@@ -6,6 +6,7 @@ import NewsVisualSlice from './slices/NewsVisualSlice';
 import CommunityVisualSlice from './slices/CommunityVisualSlice';
 import CommunitySlice from './slices/CommunitySlice';
 import StoreVisualSlice from './slices/StoreVisualSlice';
+import StoreSearchSlice from './slices/StoreSearchSlice';
 
 const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ const store = configureStore({
     NewsVisualSlice: NewsVisualSlice,
     CommunityVisualSlice: CommunityVisualSlice,
     CommunitySlice: CommunitySlice,
-    StoreVisualSlice: StoreVisualSlice
+    StoreVisualSlice: StoreVisualSlice,
+    StoreSearchSlice: StoreSearchSlice
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false})
 });
