@@ -1,15 +1,15 @@
 import React, { memo, useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import styled, { css } from 'styled-components'
+import styled from 'styled-components';
 
 import StoreVisual from '@/components/StoreVisual';
-import searchIcon from '@/assets/img/store/search-ico.png'
+import searchIcon from '@/assets/img/store/search-ico.png';
 import plusIcon from '@/assets/img/store/more-off.png';
+import minusIcon from '@/assets/img/store/more-on.png';
 
-import {useSelector, useDispatch} from 'react-redux';
-import {getList} from '@/slices/StoreSearchSlice'
-
+import { useSelector, useDispatch } from 'react-redux';
+import { getList } from '@/slices/StoreSearchSlice';
 
 const SearchWrap = styled.form`
   display: flex;
@@ -26,7 +26,7 @@ const SearchWrap = styled.form`
     
     &.left_box {
       justify-content: flex-start;
-      width: 40%
+      width: 40%;
     }
     
     &.right_box {
@@ -48,10 +48,10 @@ const SearchWrap = styled.form`
           border: 0;
           width: 100%;
           height: 100%;
-        } 
+        }
       }
     }
-    
+
     .search_input {
       width: 84%;
       height: 40px;
@@ -61,7 +61,7 @@ const SearchWrap = styled.form`
         width: 100%;
         border: 0;
       }
-      
+
       button {
         display: flex;
         align-items: center;
@@ -74,7 +74,6 @@ const SearchWrap = styled.form`
           display: block;
           width: 50%;
           object-fit: contain;
-
         }
       }
     }
@@ -116,28 +115,131 @@ const StoreList = styled.table`
       td {
         padding: 28px 0;
         text-align: center;
-         cursor: pointer;
+        cursor: pointer;
+
+        .plusIcon {
+          display: block;
+        }
+
+        .minusIcon {
+          display: none;
+        }
+      }
+
+      &.detailOn {
+        background-color: #0e347e;
+
+        td {
+          color: #fff;
+
+          .plusIcon {
+            display: none;
+          }
+
+          .minusIcon {
+            display: block;
+          }
+        }
       }
     }
   }
 `;
 
-const StoreDetails = styled.div`
+const StoreDetailsTr = styled.tr`
+  display: none;
 
+  &.on {
+    display: table-row;
+  }
+
+  td {
+    .store_inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 28px;
+
+      .store_img {
+        width: 40%;
+        background-color: #fff;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .store_info {
+        margin: auto 0;
+        padding: 0 30px;
+        width: 60%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        row-gap: 20px;
+
+        dt, dd {
+          text-align: left;
+          font-weight: 400;
+        }
+
+        dt {
+          color: #0e347e;
+        }
+
+        dd {
+          color: #707070;
+        }
+      }
+    }
+  }
 `;
 
 const index = memo(() => {
-    //dispatch 함수 생성
-    const dispatch = useDispatch();
-    //hook을 통해 slice가 관리하는 상태값 가져오기
-    const {data, loading, error} = useSelector((state) => state.StoreSearchSlice);
+  const storeList = useRef([]);
+  const storeDetails = useRef([]);
 
-    //컴포넌트가 마운트되면 데이터 조회를 위한 액션함수를 디스패치 함
-    useEffect(() => {
-        dispatch(getList());
-    }, []);
+  const StoreOn = useCallback((e) => {
+    storeList.current.forEach((v, i) => {
+      v && v.classList.remove('detailOn');
+    });
 
-    console.log(data);
+    storeDetails.current.forEach((v, i) => {
+      v && v.classList.remove('on');
+    });
+
+    e.currentTarget.classList.add('detailOn');
+    e.currentTarget.nextElementSibling.classList.add('on');
+  }, []);
+
+  const [regionSearch, setRegionSearch] = useState('');
+  const [citySearch, setCitySearch] = useState('');
+  const [inputSearch, setInputSearch] = useState('');
+
+  const onRegionSearch = useCallback((e) => {
+    setRegionSearch(e.currentTarget.value);
+  }, []);
+
+  const onCitySearch = useCallback((e) => {
+    setCitySearch(e.currentTarget.value);
+  }, []);
+
+  const onInputSearch = useCallback((e) => {
+    setInputSearch(e.currentTarget.value);
+  }, []);
+
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector((state) => state.StoreSearchSlice);
+
+  useEffect(() => {
+    dispatch(getList({
+      regionSearch: regionSearch,
+      citySearch: citySearch,
+      inputSearch: inputSearch,
+    }));
+  }, [regionSearch, citySearch, inputSearch, dispatch]);
 
   return (
     <>
@@ -148,25 +250,38 @@ const index = memo(() => {
             <span>지역검색</span>
             <ul className='search_box'>
               <li>
-                <select></select>
+                <select onChange={onRegionSearch}>
+                  <option value='전체'>전체</option>
+                  <option value='서울특별시'>서울특별시</option>
+                  <option value='경기도'>경기도</option>
+                  <option value='인천광역시'>인천광역시</option>
+                </select>
               </li>
               <li>
-                <select></select>
+                <select onChange={onCitySearch}>
+                  <option value='전체'>전체</option>
+                  <option value='강남구'>강남구</option>
+                  <option value='강동구'>강동구</option>
+                  <option value='강서구'>강서구</option>
+                  <option value='관악구'>관악구</option>
+                  <option value='고양시'>고양시</option>
+                  <option value='부천시'>부천시</option>
+                </select>
               </li>
             </ul>
           </div>
           <div className='right_box'>
             <label>매장명 검색</label>
             <div className='search_box search_input'>
-              <input type="text" />
-              <button type='submit'>
-                <Image src={searchIcon}/>
+              <input type="text" onChange={onInputSearch} />
+              <button type='button'>
+                <Image src={searchIcon} alt='Search' />
               </button>
             </div>
           </div>
         </SearchWrap>
 
-        <TotalWrap>총 <span>{data && data.length}</span>개의 매장이 있습니다.</TotalWrap>
+        <TotalWrap>총 <span>{data ? data.length : 0}</span>개의 매장이 있습니다.</TotalWrap>
 
         <StoreList>
           <thead>
@@ -179,40 +294,41 @@ const index = memo(() => {
             </tr>
           </thead>
           <tbody>
-              {data && data.map((v, i) => {
-                return(
-                  <>
-                    <tr key={v.id}>
-                      <td>{v.region}</td>
-                      <td>{v.store_name}</td>
-                      <td>{v.address}</td>
-                      <td>{v.tel}</td>
-                      <td><Image src={plusIcon} alt='' /></td>
-                    </tr>
-                    <tr>
-                      <td colSpan={5}>
-                        <StoreDetails >
-                          <div>
-                            <img src={v.store_img && v.store_img} alt='' />
-                          </div>
-                          <dl>
-                            <dt>위치</dt>
-                            <dd>{v.address}</dd>
-                            <dt>영업시간</dt>
-                            <dd>{v.weekday_hours}<br/>{v.weekend_hours}</dd>
-                            <dt>주차</dt>
-                            <dd>{v.parking}</dd>
-                            <dt>전화번호</dt>
-                            <dd>{v.tel}</dd>
-                            <dt>좌석</dt>
-                            <dd>{v.seat}</dd>
-                          </dl>
-                        </StoreDetails>
-                      </td>
-                    </tr>
-                  </>
-                )
-              })}  
+            {data && data.map((v, i) => (
+              <>
+                <tr className='store_list' key={v.id} onClick={StoreOn} ref={el => storeList.current[i] = el}>
+                  <td>{v.region}</td>
+                  <td>{v.store_name}</td>
+                  <td>{v.address}</td>
+                  <td>{v.tel}</td>
+                  <td>
+                    <Image className='plusIcon' src={plusIcon} alt='' />
+                    <Image className='minusIcon' src={minusIcon} alt='' />
+                  </td>
+                </tr>
+                <StoreDetailsTr ref={el => storeDetails.current[i] = el}>
+                  <td colSpan={5}>
+                    <div className='store_inner'>
+                      <div className='store_img'>
+                        <img src={v.store_img && v.store_img} alt='' />
+                      </div>
+                      <dl className='store_info'>
+                        <dt>위치</dt>
+                        <dd>{v.address}</dd>
+                        <dt>영업시간</dt>
+                        <dd>{v.weekday_hours}<br />{v.weekend_hours}</dd>
+                        <dt>주차</dt>
+                        <dd>{v.parking}</dd>
+                        <dt>전화번호</dt>
+                        <dd>{v.tel}</dd>
+                        <dt>좌석</dt>
+                        <dd>{v.seat}</dd>
+                      </dl>
+                    </div>
+                  </td>
+                </StoreDetailsTr>
+              </>
+            ))}
           </tbody>
         </StoreList>
       </div>

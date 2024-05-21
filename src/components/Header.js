@@ -4,11 +4,7 @@ import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
-//상태값을 로드하기 위한 hook과 action함수를 dispatch할 hook참조
 import {useSelector, useDispatch} from 'react-redux';
-//Slice에 정의된 함수 참조
-// - 동기처리인 경우에는 리듀서 내의 액션함수 참조
-// - 비동기처리인 경우에는 Slice내의 미들웨어 함수 참조
 import {getList} from '@/slices/HeaderSlice';
 
 import MenuLink from "@/components/MenuLink";
@@ -408,15 +404,15 @@ const Header = memo(() => {
                         <div className="box_top">
                             <ul>
                                 <li>
-                                    <a href="https://www.theborn.co.kr/">더본코리아</a>
+                                    <a href="https://www.theborn.co.kr/" target="_blank">더본코리아</a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.instagram.com/paikscoffee_official/" target="_blank">
                                         <Image src={facebook} alt="페이스북 이미지" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://ko-kr.facebook.com/ipaikscoffee/" target="_blank">
                                         <Image src={insta} alt="인스타그램 이미지" />
                                     </a>
                                 </li>

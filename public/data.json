@@ -1184,7 +1184,7 @@
       "parking": "인근 공용주차장",
       "dayoff": "연중무휴",
       "seat": "테이블 3개 / 좌석 6석",
-      "store_img": ""
+      "store_img": "/assets/img/store/대치사거리점.png"
     },
     {
       "id": "3",
@@ -1198,7 +1198,7 @@
       "parking": "불가",
       "dayoff": "연중무휴",
       "seat": "테이블 12개 / 좌석 24석",
-      "store_img": ""
+      "store_img": "/assets/img/store/일원영희초교점.jpg"
     },
     {
       "id": "3",
@@ -1212,7 +1212,7 @@
       "parking": "가능",
       "dayoff": "매주 일요일",
       "seat": "테이블 4개 / 좌석 8석",
-      "store_img": ""
+      "store_img": "/assets/img/store/강동비즈밸리점.jpg"
     },
     {
       "id": "4",
@@ -1225,7 +1225,8 @@
       "weekend_hours": "주말 10:00 ~ 22:00",
       "parking": "불가",
       "dayoff": "연중무휴",
-      "seat": "테이블 6개 / 좌석 12석"
+      "seat": "테이블 6개 / 좌석 12석",
+      "store_img": "/assets/img/store/길동역점.jpg"
     },
     {
       "id": "5",
@@ -1239,7 +1240,7 @@
       "parking": "불가",
       "dayoff": "연중무휴",
       "seat": "테이블 6개 / 좌석 12석",
-      "store_img": ""
+      "store_img": "/assets/img/store/화곡중앙시장점.png"
     },
     {
       "id": "6",
@@ -1253,7 +1254,7 @@
       "parking": "불가",
       "dayoff": "연중무휴",
       "seat": "테이블 7개 / 좌석 14석",
-      "store_img": ""
+      "store_img": "/assets/img/store/가양중앙점.png"
     },
     {
       "id": "7",
@@ -1267,7 +1268,7 @@
       "parking": "불가",
       "dayoff": "연중무휴",
       "seat": "테이블 2개 / 좌석 4석",
-      "store_img": ""
+      "store_img": "/assets/img/store/서원역점.jpg"
     },
     {
       "id": "8",
@@ -1281,7 +1282,7 @@
       "parking": "불가",
       "dayoff": "연중무휴",
       "seat": "테이블 12개 / 좌석 24석",
-      "store_img": ""
+      "store_img": "/assets/img/store/사당네스코점.jpg"
     },
     {
       "id": "9",
@@ -1295,7 +1296,7 @@
       "parking": "불가",
       "dayoff": "연중무휴",
       "seat": "없음",
-      "store_img": ""
+      "store_img": "/assets/img/store/신림역2호점.jpg"
     },
     {
       "id": "10",
@@ -1309,7 +1310,7 @@
       "parking": "가능",
       "dayoff": "연중무휴",
       "seat": "테이블 20개 / 좌석 40석",
-      "store_img": ""
+      "store_img": "/assets/img/store/일산식사구제거리점.png"
     },
     {
       "id": "11",
@@ -1323,7 +1324,7 @@
       "parking": "매장 앞 주차장 30분 무료 주차 가능",
       "dayoff": "연중무휴",
       "seat": "테이블 8개 / 좌석 16석",
-      "store_img": ""
+      "store_img": "/assets/img/store/고양일고점.jpg"
     },
     {
       "id": "12",
@@ -1337,7 +1338,7 @@
       "parking": "가능",
       "dayoff": "매주 일요일",
       "seat": "테이블 10개 / 좌석 120석",
-      "store_img": ""
+      "store_img": "/assets/img/store/부천춘의점.png"
     }
   ]
 }

@@ -4,12 +4,25 @@ import styled, { css } from 'styled-components';
 import Image from "next/image";
 import ImageSlider from "react-simple-image-slider";
 
+import MenuLink from "@/components/MenuLink";
+import mq from "@/assets/style/MediaQuery.js";
 import Sns from "@/components/Sns";
 
 import btnPlus from "@/assets/img/main/view_icon.png"
 import btnHouse from "@/assets/img/main/store-ico.png"
 import btnOn from "@/assets/img/main/btn1-on.png"
 
+const SlideWrap = styled.div`
+    ${mq.maxWidth('xl')`
+        div {
+            width: 100% !important;
+            height: 30vw !important;
+            background-position: center;
+            background-size: 100% contain !important;
+            background-repeat: no-repeat;
+        }
+    `}
+`;
 
 const MainContainer = styled.main`
     margin: 0 auto;
@@ -392,17 +405,18 @@ const index = memo(() => {
 
     return (
         <MainContainer>
-            <ImageSlider 
-                width={1920}
-                height={600}
-                images={images}
-                showBullets={true}
-                // showNavs={true}
-                autoPlay={true}
-                autoPlayDelay={2.0}
-                loop={true}
-                style={{margin: '0 auto'}}
-            />
+            <SlideWrap>
+                <ImageSlider
+                    width={1920}
+                    height={600}
+                    images={images}
+                    showBullets={true}
+                    autoPlay={true}
+                    autoPlayDelay={2.0}
+                    loop={true}
+                    style={{margin: '0 auto'}}
+                />
+            </SlideWrap>
 
             <div>
                 <div className="banner_wrap">
