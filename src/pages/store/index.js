@@ -202,6 +202,9 @@ const index = memo(() => {
   const storeDetails = useRef([]);
 
   const StoreOn = useCallback((e) => {
+    const isDetailOn = e.currentTarget.classList.contains('detailOn');
+    const isOn = e.currentTarget.nextElementSibling.classList.contains('on');
+
     storeList.current.forEach((v, i) => {
       v && v.classList.remove('detailOn');
     });
@@ -210,8 +213,10 @@ const index = memo(() => {
       v && v.classList.remove('on');
     });
 
-    e.currentTarget.classList.add('detailOn');
-    e.currentTarget.nextElementSibling.classList.add('on');
+    if (!isDetailOn && !isOn) {
+      e.currentTarget.classList.add('detailOn');
+      e.currentTarget.nextElementSibling.classList.add('on');
+    }
   }, []);
 
   const [regionSearch, setRegionSearch] = useState('');
@@ -266,6 +271,8 @@ const index = memo(() => {
                   <option value='관악구'>관악구</option>
                   <option value='고양시'>고양시</option>
                   <option value='부천시'>부천시</option>
+                  <option value='계양구'>계양구</option>
+                  <option value='남구'>남구</option>
                 </select>
               </li>
             </ul>

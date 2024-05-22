@@ -3,6 +3,8 @@ import axios from "axios";
 import styled from "styled-components";
 import Image from 'next/image';
 
+import mq from "@/assets/style/MediaQuery.js";
+
 import flogo from "@/assets/img/footer/flogo.png";
 import { set } from "lodash";
 
@@ -28,6 +30,12 @@ const FooterContainer = styled.footer`
        justify-content: center;
        margin: 10px auto;
        width: 558px;
+
+       ${mq.maxWidth('xl')`
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        `}
 
        li {
 

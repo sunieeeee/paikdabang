@@ -4,7 +4,6 @@
  */
 import React, {memo} from "react";
 
-import Meta from "@/components/Meta";
 import GlobalStyle from "@/assets/style/GlobalStyle";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,7 +16,6 @@ import store from '@/store';
 const App = memo(({ Component, pageProps }) => {
     return (
         <Provider store={store}>
-            <Meta />
             <GlobalStyle />
             <Header />
 

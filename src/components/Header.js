@@ -219,7 +219,6 @@ color: #333;
                     display: none;
                     padding-top: 20px;
                     min-width: 180%;
-                    /* background-color: lightblue; */
                     overflow: hidden;
 
                     li {
@@ -274,8 +273,8 @@ color: #333;
             }
 
             ${mq.maxWidth('xl')`
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 70px;
                 right: -100%;
                 display: block;
                 width: 65%;
@@ -291,6 +290,8 @@ color: #333;
                     padding: 0;
                     width: 100%;
                     border-bottom: 1px solid #e5e5e5;
+                    overflow-x: hidden;
+
                      > a {
                         display: block;
                         padding: 20px;
@@ -302,7 +303,6 @@ color: #333;
                         position: static;
                         display: block;
                         height: 0;
-                       
                         overflow: hidden;
                         padding: 0 2%;
                         background-color: #fff;

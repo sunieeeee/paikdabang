@@ -11,12 +11,6 @@ const Document = () => {
     return (
         <Html lang="ko">
             <Head>
-                {/*
-                        <head>는 순수 HTML태그.
-                        <Head>는 next.js의 컴포넌트.
-                        이 안에서 charset과 viewport 지정은 자동으로 이루어진다.
-                        그 외에 개발자가 적용하고자 하는 외부 CSS나 JS리소스 참조, SEO 구현등을 처리할 수 있다.
-                    */}
                 {/* 구글 웹폰트 적용 */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

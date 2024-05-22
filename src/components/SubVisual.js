@@ -84,9 +84,10 @@ const SubVisualWrap = styled.div`
   }
 `;
 
-const SubVisual = memo(({ key, $bgImage, children }) => {
+const SubVisual = memo(({ $bgImage, children }) => {
+  
   return (
-    <SubVisualWrap key={key} $bgImage={$bgImage}>
+    <SubVisualWrap $bgImage={$bgImage}>
       {children}
     </SubVisualWrap>
   );

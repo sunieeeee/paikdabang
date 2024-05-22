@@ -29,10 +29,18 @@ const MainContainer = styled.main`
     width: 1920px;
     overflow: hidden !important;
 
+    ${mq.maxWidth('xl')`
+        width: 100%;
+    `}
+
     .banner_wrap {
         display: flex;
         flex-wrap: wrap;
-        
+
+        ${mq.maxWidth('xl')`
+            flex-direction: column;
+        `}
+
         .banner_box {
             width: 100%;
             height: 320px;
@@ -48,10 +56,20 @@ const MainContainer = styled.main`
                 flex-direction: column;
                 justify-content: space-between;
 
+                ${mq.maxWidth('xl')`
+                    margin: auto;
+                    padding: 20px 0 !important;
+                    width: 92%;
+                `}
 
                 &.right_align {
                     padding: 30px 0;
                     margin: 0 0 0 auto;
+
+                    ${mq.maxWidth('xl')`
+                        margin: auto;
+                        padding: 0;
+                    `}
                 }
 
                 dl {
@@ -62,6 +80,11 @@ const MainContainer = styled.main`
                         font-size: 52px;
                         font-weight: 900;
                         font-family: var(--font-montserrat);
+
+                        ${mq.maxWidth('xl')`
+                            margin-bottom: 15px;
+                            font-size: 27px;
+                        `}
                     }
 
                     dd {
@@ -78,6 +101,10 @@ const MainContainer = styled.main`
                 background-color: #fff;
                 border-radius: 100%;
                 box-shadow: 0 0px 10px 5px #00000011;
+
+                ${mq.maxWidth('xl')`
+                    margin: auto 0 0 auto;
+                `}
 
                 &:hover {
                     .btnOff {
@@ -115,12 +142,23 @@ const MainContainer = styled.main`
         }
 
         .banner_hover {
+            /* background-size: 100% 100%; */
             background-size: 100% 100%;
             background-position: center center;
             transition: .6s;
-            
+
+            ${mq.maxWidth('xl')`
+                height: 300px !important;
+                background-size: cover;
+                background-position: center top 17%;
+            `}
+
             &:hover{
                background-size: 105% 105%;   
+               
+               ${mq.maxWidth('xl')`
+                    background-size: cover;
+                `}
             }
 
             dl {
@@ -132,7 +170,19 @@ const MainContainer = styled.main`
                         width: 80px;
                         height: 3px;
                         background-color: #000;
+
+                        ${mq.maxWidth('xl')`
+                            margin-top: 15px;
+                            width: 40px;
+                            height: 1.5px;
+                        `}
                     }
+                }
+
+                dd {
+                    ${mq.maxWidth('xl')`
+                        display: none;
+                    `}
                 }
             }
         }
@@ -145,23 +195,46 @@ const MainContainer = styled.main`
             width: 500px;
             height: auto;
 
+            ${mq.maxWidth('xl')`
+                flex-direction: row-reverse;
+                margin: 15px auto 0;
+                width: 92%;
+            `}
+
             .banner_info {
                 width: 100%;
                 height: 50%;
                 border: 2px solid #071f60;
+
+                ${mq.maxWidth('xl')`
+                    padding: 15px !important;
+                `}
 
                 dl {
                     color: #071f60;
                     dt {
                         font-size: 40px;
                         
+                        ${mq.maxWidth('xl')`
+                            font-size: 20px;
+                        `}
                     }
+
+                    ${mq.maxWidth('xl')`
+                        dd {
+                            font-size: 15px;
+                        }
+                    `}
                 }
 
                 .store_search {
-                    
                     height: 50px;
                     border: 2px solid #071f60;
+
+                    ${mq.maxWidth('xl')`
+                        height: 40px;
+                    `}
+                    
                     input {
                         display: block;
                         padding: 0 10px;
@@ -218,12 +291,25 @@ const MainContainer = styled.main`
             dl {
                 dt {
                     color: #071f60;
+
+                    ${mq.maxWidth('xl')`
+                        font-size: 42px;
+                    `}
                 }
                 
                 dd {
                     color: #293f83;
+
+                    ${mq.maxWidth('xl')`
+                        display: none;
+                    `}
                 }
             }
+
+            ${mq.maxWidth('xl')`
+                width: 100%;
+
+            `}
         }
 
         // 두 번째 .banner_box
@@ -237,13 +323,24 @@ const MainContainer = styled.main`
             dl {
                 dt {
                     color: #fff;
+
+                    ${mq.maxWidth('xl')`
+                        font-size: 42px;
+                    `}
                 }
                 
                 dd {
                     color: #c4cbde;
+
+                    ${mq.maxWidth('xl')`
+                        display: none;
+                    `}
                 }
             }
-            
+
+            ${mq.maxWidth('xl')`
+                width: 100%;
+            `}
         }
 
         // 세 번째 .banner_box
@@ -255,6 +352,10 @@ const MainContainer = styled.main`
             .banner_info {
                 margin: 0 auto;
                 width: 1200px;
+            
+                ${mq.maxWidth('xl')`
+                    width: 92%;
+                `}
             }
             
             dl {
@@ -291,6 +392,10 @@ const MainContainer = styled.main`
                     color: #293f83;
                 }
             }
+
+            ${mq.maxWidth('xl')`
+                width: 100%;
+            `}
         }
 
         & .banner_box:nth-of-type(5) {
@@ -311,6 +416,10 @@ const MainContainer = styled.main`
                     color: #f1ae1d;
                 }
             }
+
+            ${mq.maxWidth('xl')`
+                width: 100%;
+            `}
         }
 
         & .banner_box:nth-of-type(6) {
@@ -336,6 +445,15 @@ const MainContainer = styled.main`
                     color: #fff;
                 }
             }
+
+            ${mq.maxWidth('xl')`
+                margin-top: 0;
+                width: 100%;
+
+                .banner_info {
+                    width: 92%;
+                }
+            `}
         }
     }
     

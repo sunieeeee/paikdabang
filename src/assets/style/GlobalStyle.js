@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: var(--font-sans, --font-montserrat, --font-myeongjo);
     }
 
+    body {
+        overflow-x: hidden;
+    };
+
     a {
         text-decoration: none;
     }
