@@ -330,7 +330,8 @@ const Header = memo(() => {
       setUseViewPort(window.innerWidth);
       // console.log(viewPort);
     };
-
+    
+    setUseViewPort(window.innerWidth);
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -339,18 +340,17 @@ const Header = memo(() => {
   }, [viewPort]);
 
   const onBgOn = useCallback(() => {
-    window.innerWidth >= 1200 && navBg.current.classList.add("bgOn");
-  }, []);
+    viewPort >= 1200 && navBg.current.classList.add("bgOn");
+  }, [viewPort]);
 
   const onBgOut = useCallback(() => {
-    window.innerWidth >= 1200 && navBg.current.classList.remove("bgOn");
-  }, []);
+    viewPort >= 1200 && navBg.current.classList.remove("bgOn");
+  }, [viewPort]);
 
   const navOpenMo = useCallback(() => {
-    window.innerWidth < 1200 &&
-      menuIcon.current.classList.toggle("menu_active");
-    window.innerWidth < 1200 && navList.current.classList.toggle("menu_active");
-  }, []);
+    viewPort < 1200 && menuIcon.current.classList.toggle("menu_active");
+    viewPort < 1200 && navList.current.classList.toggle("menu_active");
+  }, [viewPort]);
 
   const navListOpenMo = useCallback((e) => {
     subMenu.current.forEach((v, i) => {
