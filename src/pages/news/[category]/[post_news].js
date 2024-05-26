@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
+import mq from "@/assets/style/MediaQuery.js";
 import NewsVisual from '@/components/NewsVisual';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {getItem} from '@/slices/NewsSlice';
-import { createKey } from 'next/dist/shared/lib/router/router';
 import Link from 'next/link';
 
 const PostContent = styled.article`
@@ -19,17 +19,25 @@ const PostContent = styled.article`
     padding: 30px 40px;
     border-top: 1px solid #0e347e;
     border-bottom: 1px solid #0e347e;
-    
+
+    ${mq.maxWidth("lg")`
+      flex-direction: column;
+      gap: 15px;
+      margin: 0 auto;
+      padding: 15px 0;
+      width: 92%;
+    `}
+
     h2 {
       font-size: 22px;
       font-weight: 500;
-      color: #071F60;
+      color: #071f60;
 
       .group {
-        color: #919191
+        color: #919191;
       }
     }
-    
+
     ul {
       li {
         display: inline-block;
@@ -37,7 +45,7 @@ const PostContent = styled.article`
         color: #999;
 
         &:first-of-type::after {
-          content: '';
+          content: "";
           display: inline-block;
           margin: 0 10px;
           width: 1px;
@@ -47,9 +55,15 @@ const PostContent = styled.article`
       }
     }
   }
-  
+
   .post_content {
     padding: 46px 41px;
+
+    ${mq.maxWidth("lg")`
+      margin: 0 auto;
+      padding: 25px 10px;
+      width: 92%;
+    `}
 
     img {
       display: block;
@@ -65,6 +79,11 @@ const ListView = styled.div`
   margin: 80px auto 0;
   background-color: #0e347e;
 
+  ${mq.maxWidth("lg")`
+    margin: 40px auto 0;
+    width: 92%;
+  `}
+
   a {
     display: flex;
     justify-content: center;
@@ -74,7 +93,7 @@ const ListView = styled.div`
     font-size: 17px;
     color: #fff;
   }
-`
+`;
 
 const menuCategory = memo(() => {
   const router = useRouter();

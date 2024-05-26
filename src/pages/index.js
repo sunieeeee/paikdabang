@@ -3,12 +3,12 @@ import axios from "axios";
 import styled, { css } from "styled-components";
 import Image from "next/image";
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 import mq from "@/assets/style/MediaQuery.js";
 import Sns from "@/components/Sns";
@@ -18,36 +18,36 @@ import btnHouse from "@/assets/img/main/store-ico.png";
 import btnOn from "@/assets/img/main/btn1-on.png";
 
 const SlideWrap = styled.div`
-	.swiper {
-		height: 100%;
+  .swiper {
+    height: 100%;
 
-		.swiper-slide{
-			width: 100%;
-			
-			img {
-				display: block;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
-	}
+    .swiper-slide {
+      width: 100%;
 
-	.swiper-pagination {
-		bottom: 30px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 
-		.swiper-pagination-bullet {
-			margin: 0 8px;
-			width: 10px;
-			height: 10px;
-			background-color: #fff;
-			opacity: 1;
-		}
+  .swiper-pagination {
+    bottom: 30px;
 
-		.swiper-pagination-bullet-active {
-			background-color: #ffe600;
-		}
-	}
+    .swiper-pagination-bullet {
+      margin: 0 8px;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #ffe600;
+    }
+  }
   ${mq.maxWidth("xl")`
 		height: 350px;
 	`}
@@ -59,8 +59,8 @@ const MainContainer = styled.main`
   overflow: hidden !important;
 
   ${mq.maxWidth("xl")`
-        width: 100%;
-    `}
+    width: 100%;
+  `}
 
   .banner_wrap {
     display: flex;
@@ -76,7 +76,7 @@ const MainContainer = styled.main`
       background-repeat: no-repeat;
       background-size: cover;
 
-			${mq.maxWidth("xl")`
+      ${mq.maxWidth("xl")`
 				height: 240px;
 			`}
 
@@ -90,19 +90,19 @@ const MainContainer = styled.main`
         justify-content: space-between;
 
         ${mq.maxWidth("xl")`
-                    margin: auto;
-                    padding: 20px 0 !important;
-                    width: 92%;
-                `}
+          margin: auto;
+          padding: 20px 0 !important;
+          width: 92%;
+        `}
 
         &.right_align {
           padding: 30px 0;
           margin: 0 0 0 auto;
 
           ${mq.maxWidth("xl")`
-                        margin: auto;
-                        padding: 0;
-                    `}
+            margin: auto;
+            padding: 0;
+          `}
         }
 
         dl {
@@ -115,9 +115,9 @@ const MainContainer = styled.main`
             font-family: var(--font-montserrat);
 
             ${mq.maxWidth("xl")`
-                            margin-bottom: 15px;
-                            font-size: 27px;
-                        `}
+              margin-bottom: 15px;
+              font-size: 27px;
+            `}
           }
 
           dd {
@@ -136,8 +136,8 @@ const MainContainer = styled.main`
         box-shadow: 0 0px 10px 5px #00000011;
 
         ${mq.maxWidth("xl")`
-                    margin: auto 0 0 auto;
-                `}
+          margin: auto 0 0 auto;
+        `}
 
         &:hover {
           .btnOff {
@@ -180,17 +180,17 @@ const MainContainer = styled.main`
       transition: 0.6s;
 
       ${mq.maxWidth("xl")`
-                height: 200px !important;
-                background-size: cover;
-                background-position: center top 17%;
-            `}
+        height: 200px !important;
+        background-size: cover;
+        background-position: center top 17%;
+      `}
 
       &:hover {
         background-size: 105% 105%;
 
         ${mq.maxWidth("xl")`
-                    background-size: cover;
-                `}
+          background-size: cover;
+        `}
       }
 
       dl {
@@ -228,18 +228,18 @@ const MainContainer = styled.main`
       height: auto;
 
       ${mq.maxWidth("xl")`
-				flex-direction: row;
-				margin: 15px auto 0;
-				width: 92%;
-			`}
+        flex-direction: row;
+        margin: 15px auto 0;
+        width: 92%;
+      `}
 
       .banner_franchise {
-        background-image: url('/assets/img/main/main_sec7.png');
-				background-position: right bottom;
-				background-size: 38%;
-				background-repeat: no-repeat;
+        background-image: url("/assets/img/main/main_sec7.png");
+        background-position: right bottom;
+        background-size: 38%;
+        background-repeat: no-repeat;
 
-				${mq.maxWidth("xl")`
+        ${mq.maxWidth("xl")`
 					background-size: 140px auto;
 				`}
       }
@@ -492,7 +492,7 @@ const MainContainer = styled.main`
 				width: 100%;
 
 				.banner_info {
-						width: 92%;
+					width: 92%;
 				}
 			`}
     }
@@ -563,21 +563,19 @@ const index = memo(() => {
     <MainContainer>
       <SlideWrap>
         <Swiper
-					modules={[Navigation, Pagination, Scrollbar, A11y]}
-					loop={false}
-					pagination={{ clickable: true }}
-					slidesPerView={1} // 보여질 슬라이스 수
-				>
-					{images && images.map((v, i) => {
-						return (
-							<>
-								<SwiperSlide key={i}>
-									<img src={v.url} alt='' />
-								</SwiperSlide>
-							</>
-						)
-					})}
-				</Swiper>
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          loop={false}
+          pagination={{ clickable: true }}
+          slidesPerView={1}
+        >
+          {images && images.map((v, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <img src={v.url} alt="" />
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
       </SlideWrap>
 
       <div>
@@ -588,7 +586,7 @@ const index = memo(() => {
                 className={
                   i !== 0 && i !== 1 ? "banner_box banner_hover" : "banner_box"
                 }
-                key={i}
+                key={"banner_hover_" + i}
               >
                 <div
                   className={
@@ -612,36 +610,35 @@ const index = memo(() => {
           <div className="banner_box banner_search">
             {storesearch &&
               storesearch.map((v, i) => (
-                <>
-                  {i === 0 ? (
-                    <div className="banner_info banner_franchise" key={i}>
-                      <dl>
-                        <dt>{v.title}</dt>
-                        <dd>{v.text}</dd>
-                      </dl>
+                <div
+                  key={i}
+                  className={
+                    i === 0
+                      ? "banner_info banner_franchise"
+                      : "banner_info banner_store"
+                  }
+                >
+                  <dl>
+                    <dt>{v.title}</dt>
+                    <dd>{v.text}</dd>
+                  </dl>
 
-                      <div className="btn_house">
-                        <Image className="btnOff" src={btnHouse} alt="" />
-                        <Image className="btnOn" src={btnOn} alt="" />
-                      </div>
+
+                  {i === 0 ? (
+                    <div key={i} className="btn_house">
+                      <Image className="btnOff" src={btnHouse} alt="" />
+                      <Image className="btnOn" src={btnOn} alt="" />
                     </div>
                   ) : (
-                    <div className="banner_info banner_store" key={i}>
-                      <dl>
-                        <dt>{v.title}</dt>
-                        <dd>{v.text}</dd>
-                      </dl>
-
-                      <div className="store_search">
-                        <input
-                          type="text"
-                          name="store_search"
-                          placeholder="Find a store in your area!"
-                        />
-                      </div>
+                    <div key={i} className="store_search">
+                      <input
+                        type="text"
+                        name="store_search"
+                        placeholder="Find a store in your area!"
+                      />
                     </div>
                   )}
-                </>
+                </div>
               ))}
           </div>
         </div>
@@ -650,9 +647,12 @@ const index = memo(() => {
       <div className="sns_wrap">
         {hashtag &&
           hashtag.map((v, i) => (
-            <dl key={i}>
+            <dl key={"sns_wrap_" + i}>
               <dt>{v.title}</dt>
-              {v.txts && v.txts.map((v, i) => <dd key={i}>{v.txt}</dd>)}
+              {v.txts &&
+                v.txts.map((v, i) => (
+                  <dd key={"sns_wrap_txt_" + i}>{v.txt}</dd>
+                ))}
             </dl>
           ))}
         <Sns />

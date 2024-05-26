@@ -11,6 +11,8 @@ const Document = () => {
     return (
         <Html lang="ko">
             <Head>
+                <title>빽다방</title>
+                
                 {/* 구글 웹폰트 적용 */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

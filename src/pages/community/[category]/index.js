@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
+import mq from "@/assets/style/MediaQuery.js";
 import CommunityVisual from '@/components/CommunityVisual';
 
 import {useSelector, useDispatch} from 'react-redux';
@@ -14,20 +15,46 @@ import { createKey } from 'next/dist/shared/lib/router/router';
 const ClassBox = styled.ul`
   margin-top: 65px;
 
+  ${mq.maxWidth("lg")`
+    margin: 65px auto 0;
+    width: 92%;
+  `}
+
   li {
     a {
       display: flex;
-      border: 1px solid #e5e5e5;
       align-items: center;
       margin-bottom: 20px;
-      transition: .5s;
+      border: 1px solid #e5e5e5;
+      transition: 0.5s;
 
-      img {
-        display: block;
+      ${mq.maxWidth("lg")`
+        flex-direction: column;
+      `}
+
+      .box:first-of-type {
+        img {
+          display: block;
+        }
+
+        ${mq.maxWidth("lg")`
+          width: 100%;
+
+          img {
+            max-width: 100%;
+            width: auto;
+            object-fit: contain;
+          }
+        `}
       }
-      
+
       .box:last-of-type {
         padding: 0 40px;
+
+        ${mq.maxWidth("lg")`
+          padding: 15px;
+          width: 100%;
+        `}
 
         .state {
           display: flex;
@@ -48,7 +75,7 @@ const ClassBox = styled.ul`
 
         p {
           font-size: 18px;
-          color:#666;
+          color: #666;
         }
       }
 
@@ -56,7 +83,8 @@ const ClassBox = styled.ul`
         border: 1px solid #0e347e;
 
         .box {
-          h3, p {
+          h3,
+          p {
             color: #0e347e;
           }
         }
