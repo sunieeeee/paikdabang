@@ -1,6 +1,5 @@
 import React, { memo, useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import mq from "@/assets/style/MediaQuery.js";
 
