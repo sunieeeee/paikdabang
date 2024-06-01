@@ -7,6 +7,9 @@ import CommunityVisualSlice from './slices/CommunityVisualSlice';
 import CommunitySlice from './slices/CommunitySlice';
 import StoreVisualSlice from './slices/StoreVisualSlice';
 import StoreSearchSlice from './slices/StoreSearchSlice';
+import BannerWrapSlice from "./slices/BannerWrapSlice";
+import BannerSearchSlice from "./slices/BannerSearchSlice";
+import SnsWrapSlice from "./slices/SnsWrapSlice";
 
 const store = configureStore({
   reducer: {
@@ -19,9 +22,13 @@ const store = configureStore({
     CommunityVisualSlice: CommunityVisualSlice,
     CommunitySlice: CommunitySlice,
     StoreVisualSlice: StoreVisualSlice,
-    StoreSearchSlice: StoreSearchSlice
+    StoreSearchSlice: StoreSearchSlice,
+    BannerWrapSlice: BannerWrapSlice,
+    BannerSearchSlice: BannerSearchSlice,
+    SnsWrapSlice: SnsWrapSlice,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false})
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
 });
 
 export default store;
