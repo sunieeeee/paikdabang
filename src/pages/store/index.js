@@ -11,7 +11,7 @@ import minusIcon from '@/assets/img/store/more-on.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { getList } from '@/slices/StoreSearchSlice';
 
-const SearchWrap = styled.form`
+const SearchWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

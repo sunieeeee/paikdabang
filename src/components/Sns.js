@@ -43,7 +43,6 @@ const Sns = memo(() => {
           <Image src={insta} alt="인스타그램 이미지" />
         </a>
       </li>
-      
     </SnsContainer>
   );
 });
