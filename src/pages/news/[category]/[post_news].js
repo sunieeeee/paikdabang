@@ -95,7 +95,7 @@ const ListView = styled.div`
   }
 `;
 
-const menuCategory = memo(() => {
+const post_news = memo(() => {
   const router = useRouter();
   const { post_news } = router.query;
   const dispatch = useDispatch();
@@ -131,6 +131,6 @@ const menuCategory = memo(() => {
   );
 });
 
-menuCategory.displayName = "menuCategory";
+post_news.displayName = "post_news";
 
-export default menuCategory;
+export default post_news;

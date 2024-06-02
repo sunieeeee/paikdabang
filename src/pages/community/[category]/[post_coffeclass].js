@@ -83,7 +83,7 @@ const ListView = styled.div`
   }
 `;
 
-const menuCategory = memo(() => {
+const post_coffeclass = memo(() => {
   const router = useRouter();
   const { post_coffeclass } = router.query;
   const dispatch = useDispatch();
@@ -107,6 +107,6 @@ const menuCategory = memo(() => {
   );
 });
 
-menuCategory.displayName = "menuCategory";
+post_coffeclass.displayName = "post_coffeclass";
 
-export default menuCategory;
+export default post_coffeclass;

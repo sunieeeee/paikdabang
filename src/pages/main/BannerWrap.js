@@ -8,13 +8,8 @@ import { getList } from "@/slices/BannerWrapSlice";
 import mq from "@/assets/style/MediaQuery.js";
 
 import btnPlus from "@/assets/img/main/view_icon.png";
-import btnHouse from "@/assets/img/main/store-ico.png";
 import btnOn from "@/assets/img/main/btn1-on.png";
-
 import BannerSearch from "./BannerSearch";
-
-
-
 
 const BannerSection = styled.div`
   display: flex;
@@ -45,7 +40,7 @@ const BannerSection = styled.div`
 
       ${mq.maxWidth("xl")`
         margin: auto;
-        padding: 20px 0 !important;
+        padding: 20px 0;
         width: 92%;
       `}
 

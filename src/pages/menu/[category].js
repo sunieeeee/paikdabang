@@ -470,7 +470,6 @@ const menuCategory = memo(() => {
                             <h4>{v.name_ko}</h4>
                             <p>{v.name_en}</p>
                             <p>{v.desc}</p>
-                            {/* <BestIcon>BEST</BestIcon> */}
 
                             {v.standardAmount != null ? (
                               <div className="nutrients_wrap">

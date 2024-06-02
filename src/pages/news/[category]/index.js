@@ -155,7 +155,7 @@ const Pagination = styled.ul`
   }
 `;
 
-const menuCategory = memo(() => {
+const index = memo(() => {
   const router = useRouter();
   const { category } = router.query;
   const dispatch = useDispatch();
@@ -223,6 +223,6 @@ const menuCategory = memo(() => {
   );
 });
 
-menuCategory.displayName = "menuCategory";
+index.displayName = "index";
 
-export default menuCategory;
+export default index;
