@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect } from "react";
 import axios from "axios";
 import styled, { css } from "styled-components";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {Autoplay, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -58,10 +58,14 @@ const SlideWrap = memo(() => {
   return (
     <MainBannerSlide>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         loop={false}
         pagination={{ clickable: true }}
         slidesPerView={1}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
       >
         {images &&
           images.map((v, i) => {

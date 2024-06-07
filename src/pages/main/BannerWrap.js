@@ -50,7 +50,7 @@ const BannerSection = styled.div`
 
         ${mq.maxWidth("xl")`
           margin: auto;
-          padding: 0;
+          padding: 20px 0;
         `}
       }
 
