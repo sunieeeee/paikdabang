@@ -45,8 +45,7 @@ const SnsWrap = memo(() => {
 
   useEffect(() => {
     dispatch(getList());
-  }, []);
-  console.log(data);
+  }, []); 
 
   return (
     <SnsSection>
