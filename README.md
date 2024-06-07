@@ -2,15 +2,15 @@
 
 - `project duration` : 2024.4.17 ~ 2024.5.26 (약 한달)
 - `Link` : https://paikdabang.vercel.app
+- `프로젝트 상세설명` : [pdf파일 보러가기](https://drive.google.com/file/d/1IwxwmDAqqBQF2wyYRHgU7mYtPU8mC6Xi/view)
 - `Stack` : JavaScript, React, Next.js, Redux Toolkit, Scss, Axios
-- `프로젝트 상세설명` : [https://docs.google.com/presentation/d/1rs_b5Z66Ypg0E2jUSWx8lWnhK45iXRIqbCqrSZ3iZYk/edit?usp=drive_link](https://drive.google.com/file/d/1IwxwmDAqqBQF2wyYRHgU7mYtPU8mC6Xi/view)
 
 ## 프로적트 기능 설명
-- **데이터 필터링 및 검색 기능**: 사용자가 입력한 다양한 조건에 맞춰 데이터를 동적으로 필터링하고 검색합니다.
-- **반응형 디자인**: 다양한 디바이스 크기에 대응하는 반응형 웹 디자인을 제공합니다.
-- **컴포넌트 기반 구조**: 재사용 가능한 컴포넌트로 구성되어 유지보수와 확장이 용이합니다.
-- **Redux 상태 관리**: Redux를 사용하여 전역 상태를 관리하고 데이터 흐름을 제어합니다.
-- **비동기 데이터 요청**: `createAsyncThunk`를 사용하여 비동기 데이터 요청을 처리하고 API 호출을 관리합니다.
+- **데이터 필터링 및 검색 기능**: Redux를 사용하여 사용자가 입력한 다양한 조건에 맞춰 데이터를 동적으로 필터링하고 검색.
+- **반응형 디자인**: 다양한 디바이스 크기에 대응하는 반응형 웹 디자인을 제공.
+- **컴포넌트 기반 구조**: 재사용 가능한 컴포넌트로 구성되어 유지보수에 용이.
+- **동일한 구조의 페이지 구현**: 파일명에 대괄호를 넣는 방식으로 데이터만 바꿔서 페이지들을 구현.
+- **비동기 데이터 요청**: `createAsyncThunk`를 사용하여 비동기 데이터 요청을 처리하고 API 호출을 관리.
 
 ## 느낀점과 보완이 필요한 부분
 한달동안 이번 프로젝트를 진행하면서 데이터 필터링 및 검색 기능 구현에 큰 어려움을 겪었다.
