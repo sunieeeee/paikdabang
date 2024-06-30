@@ -92,6 +92,9 @@ const SearchWrap = styled.div`
           border: 0;
           width: 100%;
           height: 100%;
+          font-size: 14px;
+          appearance: none;
+          outline: none;
         }
       }
     }
@@ -102,8 +105,11 @@ const SearchWrap = styled.div`
       border: 1px solid #eee;
 
       input {
+        padding-left: 10px;
         width: 100%;
         border: 0;
+        font-size: 14px;
+        outline: none;
       }
 
       button {
