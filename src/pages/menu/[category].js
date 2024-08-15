@@ -297,6 +297,7 @@ const menuCategory = memo(() => {
     console.log('loading : ' + loading);
     loading == false ? setData(data) : setData();
   }, [data, loading]);
+  console.log(getData);
   return (
     <>
       {getData && (
