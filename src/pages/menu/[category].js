@@ -271,7 +271,8 @@ const menuCategory = memo(() => {
   const { category } = router.query;
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector(state => state.MenuSlice);
-  console.log('category.js에서의 data : ' + data);
+  const [getData, setData] = useState();
+
   useEffect(() => {
     dispatch(getList({ category }));
     
@@ -292,7 +293,6 @@ const menuCategory = memo(() => {
     }
   }, []);
 
-  const [getData, setData] = useState();
   useEffect(() => {
     data !== null && setData(data);
   }, [data]);

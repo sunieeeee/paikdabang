@@ -165,8 +165,6 @@ const index = memo(() => {
     dispatch(getList({ category }));
   }, [dispatch, category]);
 
-  console.log(router);
-
   return (
     <>
       <NewsVisual />
