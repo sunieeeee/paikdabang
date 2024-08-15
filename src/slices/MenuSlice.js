@@ -32,7 +32,7 @@ export const getList = createAsyncThunk(
     } catch (err) {
       result = rejectWithValue(err.response);
     }
-
+    console.log(result);
     return result;
   }
 );
