@@ -291,7 +291,7 @@ const menuCategory = memo(() => {
       menuInfo.classList.add('menuActive');
     }
   }, []);
-
+ 
 
   return (
     <>
