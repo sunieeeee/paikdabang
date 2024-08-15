@@ -122,7 +122,7 @@ const BannerSearch = memo(() => {
 
   useEffect(() => {
     dispatch(getList());
-  }, []);
+  }, [dispatch]);
 
   return (
     <SearchSection className="banner_box banner_search">

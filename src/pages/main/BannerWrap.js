@@ -350,7 +350,7 @@ const BannerWrap = memo(() => {
 
   useEffect(() => {
     dispatch(getList());
-  }, []);
+  }, [dispatch]);
 
   return (
     <BannerSection>
