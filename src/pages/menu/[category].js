@@ -292,13 +292,17 @@ const menuCategory = memo(() => {
     }
   }, []);
 
+  const [getData, setData] = useState();
+  useEffect(() => {
+    data !== null && setData(data);
+  }, [data]);
 
   return (
     <>
-      {data && (
+      {getData && (
         <div>
-          {!data.menuList ? (
-            data.map((v, i) => {
+          {!getData.menuList ? (
+            getData.map((v, i) => {
               return (
                 v.category === "menu_new" && (
                   <SubVisual key={v.id} $bgImage={v.bgImage}>
@@ -326,14 +330,14 @@ const menuCategory = memo(() => {
               );
             })
           ) : (
-            <SubVisual key={data.id} $bgImage={data.bgImage}>
+            <SubVisual key={getData.id} $bgImage={getData.bgImage}>
               <div className="subvisual_info">
-                <h1>{data.title}</h1>
-                <p>{data.txt}</p>
+                <h1>{getData.title}</h1>
+                <p>{getData.txt}</p>
               </div>
               <ul className="subvisual_menu">
-                {data.tab &&
-                  data.tab.map((tab, index) => (
+                {getData.tab &&
+                  getData.tab.map((tab, index) => (
                     <li
                       key={index}
                       className={
@@ -349,7 +353,7 @@ const menuCategory = memo(() => {
 
           <div className="inner">
             <MenuSubTitle $paddingTop="90px" $paddingBottom="30px">
-              {data && !data.menuList ? "신메뉴" : "추천메뉴"}
+              {getData && !getData.menuList ? "신메뉴" : "추천메뉴"}
             </MenuSubTitle>
 
             <SwiperContainer>
@@ -367,11 +371,11 @@ const menuCategory = memo(() => {
                   },
                 }}
               >
-                {data && !data.menuList ? (
+                {getData && !getData.menuList ? (
                   <>
-                    {data &&
-                      !data.menuList &&
-                      data.map((v, i) => {
+                    {getData &&
+                      !getData.menuList &&
+                      getData.map((v, i) => {
                         return (
                           v.menuList &&
                           v.menuList
@@ -450,7 +454,7 @@ const menuCategory = memo(() => {
                   </>
                 ) : (
                   <>
-                    {data.menuList
+                    {getData.menuList
                       .filter((v) => v.best === true)
                       .map((v, i) => (
                         <SwiperSlide key={i} onClick={menuToggle}>
@@ -522,9 +526,9 @@ const menuCategory = memo(() => {
 
             <SubWrap>
               <ul className="menu_list">
-                {data &&
-                  data.menuList &&
-                  data.menuList.map((v, i) => (
+                {getData &&
+                  getData.menuList &&
+                  getData.menuList.map((v, i) => (
                     <li key={i} onClick={menuToggle}>
                       <img src={v.img} alt="" />
                       <p>{v.name_ko}</p>

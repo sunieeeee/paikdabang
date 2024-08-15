@@ -29,13 +29,11 @@ export const getList = createAsyncThunk(
           throw new Error("No data found for the specified category.");
         }
       }
-
-      return result;
-      
     } catch (err) {
       result = rejectWithValue(err.response);
     }
-    console.log(result);
+
+    return result;
   }
 );
 
